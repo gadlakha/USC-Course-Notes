@@ -66,7 +66,9 @@ for the numbers 3, 6, 9, and 12
 4. Full Launch
   A final analysis by Google engineers and the improvement is released
 ## DCG
-   DCG = rel1 + sum(reli / log2(i + 1))
+* The premise of DCG is that highly relevant documents appearing lower in a search result list should be penalized as the graded relevance value is reduced logarithmically proportional to the position of the result.
+* DCG = rel1 + sum(reli / log2(i + 1))
+* the graded relevance of the result at position i
 ## A/B testing
    is comparing two versions of a web page to see which one performs better. You compare two web pages by showing the two variants (let's call them A and B) to similar visitors at the same time. The one that gives a better conversion rate, wins!
 ## User click for search results
@@ -79,7 +81,7 @@ for the numbers 3, 6, 9, and 12
  * Robots.txt: There is a protocol that defines the limitations for a web crawler as it visits a website; its definition is here. Website
  request on what can(not) be crawled by placing a robots.txt file in the root directory
 
-## 4 normalization rules
+## 4 normalization rules of URL
  * Convert the scheme and host to lower case.
  * Capitalize letters in escape sequences.
  * Decode percent-encoded octets of unreserved characters.
@@ -87,6 +89,12 @@ for the numbers 3, 6, 9, and 12
 
 ## A spider trap
  * is when a crawler re-visits the same page over and over again
+## Handing Spam
+* The first generation of spam consisted of pages with a high number of repeated terms, so as to score high on search engines that ranked by word frequency
+* Cloacking: The second generation of spam used a technique called cloaking;
+When the web server detects a request from a crawler, it returns a different page than the page it returns from a user request
+
+* Doorway: A third generation, called a doorway page, contains text and metadata chosen to rank highly on certain search keywords, but when a browser requests the doorway page it instead gets a more “commercial” page
 
 ## Three strategies Coordination of Distributed Crawling
  * Independent: no coordination, every process follows its extracted links
@@ -377,8 +385,9 @@ authority value is computed as the sum of the scaled hub values that point to th
 * idfi = inverse document frequency of term i,  
            = log2 (N/ df i)  (N: total number of documents)
 An indication of a term’s discrimination power
-* A typical combined term importance indicator is tf-idf weighting
-* Define: Collection frequency of term is the number of times term t appears in the collection of documents, counting multiple appearances.  
+* The weight of a term for a document can be determined by its term frequency in this document combined with the term's inverse
+document frequency.
+*  Collection frequency of term : is the number of times term t appears in the collection of documents, counting multiple appearances.  
 * Does idf has effect on ranking of one term query?
 - No. idf can be used to set different weights for some terms that have different document frequency.
 But if there is only one term, then the term frequency can determine its ranking, no matter what the term's document frequency is.  
