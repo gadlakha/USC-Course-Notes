@@ -9,7 +9,7 @@
         |   retrieved    |  true positive |  false positive |
         |  not retrieved | false negative |  true negative  |
 
-
+* T/F -- expected ; Pos - > retrived ; neg-> not retrived
 *  Precision = tp/(tp + fp) --- number of items retrived / all retrived items
 * Recall = tp/(tp + fn) 在所有有关的比列 --- number of relevant items retrived / all retrived items
 * The accuracy of an engine is defined as:
