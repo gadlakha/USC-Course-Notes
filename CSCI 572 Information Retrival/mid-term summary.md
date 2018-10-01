@@ -1,122 +1,14 @@
-## Search Engine Basic
-## What is Web search?
-* Providing access to heterogeneous, distributed information that is publicly available on the World Wide Web
-* Multi-billion dollar business
-* Source of new opportunities in marketing
-* Strains the boundaries of trademark and intellectual property laws
-* A source of unending technical challenges
-
-## What is web search engine?
-A search engine is a program designed to help find information stored on a computer system such as the World Wide Web, inside a corporate or proprietary network or a personal computer”  
-
-## Basic Web Search Internals
-* The User
-  1. Diverse in background/training
-  2. Diverse in access methodology
-  3. Diverse in search methodology
-  4. Poor comprehension of syntax
-
-* The Web：
-  1. No design/co-ordination
-  2. Distributed content creation, linking
-  3. Content includes truth, lies, obsolete information, contradictions …
-  4. Data is stored in structured (databases), semi-structured (tables)…
-  5. Scale larger than previous text corpora
-  6. Growth – still expanding
-  7. Content can be dynamically generated
-
-* The Crawler/spider: builds corpus
-* The Indexer: creates inverted indexes
-* The Ads
-* The Query Processor： serves query results
-
-## Most Dynamic content are missed
-* Typically dynamic content is not indexed
-* A page without a static html version,
-* Dynamic content is usually assembled at the time of a request from a browser
-  - To spot dynamic content typically a URL has a ‘?’ character in it
-  - Some dynamic content includes malicious spider traps (infinite loops)
-* The term deep web refers to content missed by search engine crawlers
-
-## User’s Information NeedsAre Diverse
-* Informational – want to learn about something (~40%)
-* Navigational – want to go to that page (~25%)
-* Transactional – want to do something (web-mediated) (~35%)
-* Gray areas
-
-## Users’ Evaluation of Engines
-* Relevance and validity of results
-* User Interface – Simple, no clutter, error tolerant
-* Trust – Results are objective, the engine wants to help me
-* Post-process tools provided
-  - Explicit options such as: “search within results”, “give me more like this”, “refine the query” ...
-  - Anticipative: related searches
-* Deal with idiosyncrasies(癖好)
-
-## Query processing involves much more than just matching query terms with document terms  
-   Semantic analysis of the query includes:
-* Determining the language of the query
-* Filtering of unnecessary words from the query (stop words)
-* Looking for specific types of queries, e.g.
-  - Personalities (triggered on names)
-  - Cities (travel info, maps)
-  - Medical info (triggered on names and/or results)
-  - Stock quotes, news  (triggered on stock symbol)
-   - Company info …  
-* Determining the user’s location or the target location of the query
-* Remembering previous queries
-* Maintaining a user profile
-
-# Web Trend
-## Recent Trends in Web Internet Development
-* Growth in number of users connected
-* Growth in Smartphone use, particularly iOS and Android
-* Growth in digital data, especially photos and video
-* Growth in Social Media
-* Growth in Internet use from Mobile over desktop/laptop
-* Growth in tablet usage over desktops/laptops
-* Decreased dominance of Microsoft Windows
-
-## Measuring the Web by number of web sites
-* Measuring the Web by the Languages of Web Pages
-* Measuring the Web by Rate of Change of Pages
-* Measuring the Web by Document Content Type
-* Measuring the Web by linkage
-* Measuring the Web as a Graph
-* Measuring the Web by Content
-
-## What to do with Content type?
-* Parse them
-* Index their metadata
-* Identify what language they belong to
-
-## Web Characteristics When Viewed as a Graph
-
-* Significant duplication
-* High linkage
-* Complex graph topology
-* Spam
-
-## Manual Hierarchical Web Taxonomies
-Yahoo originally used human editors to assemble a large hierarchically structured directory of web pages.
-
-## Open Directory Project
-* known as DMoZ, is an effort to organize the web according to an ontology;
-* An approach similar to Yahoo’s;
-* Based on the distributed labor of volunteer editors (“net-citizens provide the collective brain”).
-* Used by most other search engines.
-* Started by Netscape.
-* Distributes its data using RDF format
-* DMOZ shut down in 2016
 
 # Search engine Evaluation
 
 ## Precision and Recall
 
+
                         | Relevance      | Not relevance
            ----         |------          |----     
            retrieved    |  true positive |  fals positive
           not retrieved| false negative |  true negative  
+
 
 *  Precision = tp/(tp + fp)
 * Recall = tp/(tp + fn) 在所有有关的比列
@@ -136,8 +28,9 @@ for the numbers 3, 6, 9, and 12
 * harmonic mean emphasizes the importance of small values, whereas the arithmetic mean is affected more by outliers（极端值） that are unusually large
 ## F-score
 * harmonic mean of the precision and the recall is often used as an aggregated performance score for the evaluation of algorithms and systems: called the F-score (or F-measure)
-
+* F = 2PR(P+R)
 ## Mean average precision (MAP)
+* MAP = sum(AverageP(q)) / n
 * for a set of queries is the mean of the average precision scores for each query.
 * This is the most commonly used measure in research papers
 - Mean Average Precision (MAP) Some negative aspects
@@ -147,7 +40,7 @@ for the numbers 3, 6, 9, and 12
  4. MAP requires many relevance judgments in the document collection
 
 
-# Difficulties in UsingPrecision/Recall
+# Difficulties in Using Precision/Recall
 * Should average over large document collection and query ensembles
 * Need human relevance assessments
 * Assessments have to be binary
@@ -168,7 +61,8 @@ for the numbers 3, 6, 9, and 12
   the search algorithm is altered for a small number of actual users
 4. Full Launch
   A final analysis by Google engineers and the improvement is released
-
+## DCG
+   DCG = rel1 + sum(reli / log2(i + 1))
 ## A/B testing
    is comparing two versions of a web page to see which one performs better. You compare two web pages by showing the two variants (let's call them A and B) to similar visitors at the same time. The one that gives a better conversion rate, wins!
 
@@ -210,7 +104,7 @@ In practice a vocabulary is not really upper-bounded due to proper names, typos,
 
 ## Zip f law
 * y is the frequency of the word, and x is its ranking in the frequency table. C=-1.
-## heap law
+## Heap law
 * If V is the size of the vocabulary and n is the number of words:
 * V = Kn^C
 * Typical constants: K = 10 ~ 100  C = 0.4 ~ 0.6  
@@ -520,7 +414,117 @@ public class MyCrawler extends WebCrawler {
   System.out.println("Number of outgoing links: " + links.size());
  }
 }
-``` ```
 
 
 ```
+-----------------------------------------------------------------------------------
+## Search Engine Basic
+## What is Web search?
+* Providing access to heterogeneous, distributed information that is publicly available on the World Wide Web
+* Multi-billion dollar business
+* Source of new opportunities in marketing
+* Strains the boundaries of trademark and intellectual property laws
+* A source of unending technical challenges
+
+## What is web search engine?
+A search engine is a program designed to help find information stored on a computer system such as the World Wide Web, inside a corporate or proprietary network or a personal computer”  
+
+## Basic Web Search Internals
+* The User
+  1. Diverse in background/training
+  2. Diverse in access methodology
+  3. Diverse in search methodology
+  4. Poor comprehension of syntax
+
+* The Web：
+  1. No design/co-ordination
+  2. Distributed content creation, linking
+  3. Content includes truth, lies, obsolete information, contradictions …
+  4. Data is stored in structured (databases), semi-structured (tables)…
+  5. Scale larger than previous text corpora
+  6. Growth – still expanding
+  7. Content can be dynamically generated
+
+* The Crawler/spider: builds corpus
+* The Indexer: creates inverted indexes
+* The Ads
+* The Query Processor： serves query results
+
+## Most Dynamic content are missed
+* Typically dynamic content is not indexed
+* A page without a static html version,
+* Dynamic content is usually assembled at the time of a request from a browser
+  - To spot dynamic content typically a URL has a ‘?’ character in it
+  - Some dynamic content includes malicious spider traps (infinite loops)
+* The term deep web refers to content missed by search engine crawlers
+
+## User’s Information Needs Are Diverse
+* Informational – want to learn about something (~40%)
+* Navigational – want to go to that page (~25%)
+* Transactional – want to do something (web-mediated) (~35%)
+* Gray areas
+
+## Users’ Evaluation of Engines
+* Relevance and validity of results
+* User Interface – Simple, no clutter, error tolerant
+* Trust – Results are objective, the engine wants to help me
+* Post-process tools provided
+  - Explicit options such as: “search within results”, “give me more like this”, “refine the query” ...
+  - Anticipative: related searches
+* Deal with idiosyncrasies(癖好)
+
+## Query processing involves much more than just matching query terms with document terms  
+   Semantic analysis of the query includes:
+* Determining the language of the query
+* Filtering of unnecessary words from the query (stop words)
+* Looking for specific types of queries, e.g.
+  - Personalities (triggered on names)
+  - Cities (travel info, maps)
+  - Medical info (triggered on names and/or results)
+  - Stock quotes, news  (triggered on stock symbol)
+   - Company info …  
+* Determining the user’s location or the target location of the query
+* Remembering previous queries
+* Maintaining a user profile
+
+# Web Trend
+## Recent Trends in Web Internet Development
+* Growth in number of users connected
+* Growth in Smartphone use, particularly iOS and Android
+* Growth in digital data, especially photos and video
+* Growth in Social Media
+* Growth in Internet use from Mobile over desktop/laptop
+* Growth in tablet usage over desktops/laptops
+* Decreased dominance of Microsoft Windows
+
+## Measuring the Web by number of web sites
+* Measuring the Web by the Languages of Web Pages
+* Measuring the Web by Rate of Change of Pages
+* Measuring the Web by Document Content Type
+* Measuring the Web by linkage
+* Measuring the Web as a Graph
+* Measuring the Web by Content
+
+## What to do with Content type?
+* Parse them
+* Index their metadata
+* Identify what language they belong to
+
+## Web Characteristics When Viewed as a Graph
+
+* Significant duplication
+* High linkage
+* Complex graph topology
+* Spam
+
+## Manual Hierarchical Web Taxonomies
+Yahoo originally used human editors to assemble a large hierarchically structured directory of web pages.
+
+## Open Directory Project
+* known as DMoZ, is an effort to organize the web according to an ontology;
+* An approach similar to Yahoo’s;
+* Based on the distributed labor of volunteer editors (“net-citizens provide the collective brain”).
+* Used by most other search engines.
+* Started by Netscape.
+* Distributes its data using RDF format
+* DMOZ shut down in 2016
