@@ -4,14 +4,14 @@
 ## Precision and Recall
 
 
-                        | Relevance      | Not relevance
-           ----         |------          |----     
-           retrieved    |  true positive |  fals positive
-          not retrieved| false negative |  true negative  
+        |                | Relevance      | Not relevance   |
+        |   -----        |   ------       |  ----           |
+        |   retrieved    |  true positive |  false positive |
+        |  not retrieved | false negative |  true negative  |
 
 
-*  Precision = tp/(tp + fp)
-* Recall = tp/(tp + fn) 在所有有关的比列
+*  Precision = tp/(tp + fp) --- number of items retrived / all retrived items
+* Recall = tp/(tp + fn) 在所有有关的比列 --- number of relevant items retrived / all retrived items
 * The accuracy of an engine is defined as:
    - the fraction of these classiﬁcations that are correct
           (tp + tn) / ( tp + fp + fn + tn)
@@ -25,6 +25,10 @@ for the numbers 3, 6, 9, and 12
 * The arithmetic mean is: (3+6+9+12)/4 = 7.5
 * The geometric mean is: nth-root(3*6*9*12) = 4th-root(1944) = 6.64
 * The harmonic mean is:  (1/3+1/6+1/9+1/12)=(.33+.16+.11+.08)/4=0.17 and 1/0.17 = 5.88
+  -  add the reciprocals（倒数） of the numbers in the set
+  - divide the sum by n
+  - take the reciprocal of the result
+
 * harmonic mean emphasizes the importance of small values, whereas the arithmetic mean is affected more by outliers（极端值） that are unusually large
 ## F-score
 * harmonic mean of the precision and the recall is often used as an aggregated performance score for the evaluation of algorithms and systems: called the F-score (or F-measure)
@@ -65,7 +69,96 @@ for the numbers 3, 6, 9, and 12
    DCG = rel1 + sum(reli / log2(i + 1))
 ## A/B testing
    is comparing two versions of a web page to see which one performs better. You compare two web pages by showing the two variants (let's call them A and B) to similar visitors at the same time. The one that gives a better conversion rate, wins!
+## User click for search results
+ * There is strong position bias, so absolute click rates unreliable
 
+# Crawlwer
+## basic conpect
+ * A web crawler is a computer program that visits web pages in an organized way
+ * Google’s crawler is called googlebot; Yahoo’s web crawler is/was called Yahoo! Slurp;Bingbot, standard crawler
+ * Robots.txt: There is a protocol that defines the limitations for a web crawler as it visits a website; its definition is here. Website
+ request on what can(not) be crawled by placing a robots.txt file in the root directory
+
+## 4 normalization rules
+ * Convert the scheme and host to lower case.
+ * Capitalize letters in escape sequences.
+ * Decode percent-encoded octets of unreserved characters.
+ * Remove the default port.
+
+## A spider trap
+ * is when a crawler re-visits the same page over and over again
+
+## Three strategies Coordination of Distributed Crawling
+ * Independent: no coordination, every process follows its extracted links
+ * Dynamic assignment: a central coordinator dynamically divides the web into small partitions and assigns each partition to a process
+ * Static assignment: Web is partitioned and assigned without a central coordinator before the crawl starts
+  - Firewall mode:
+  - cross-mode
+  - exchange mode
+ * If exchange mode is used, communication can be limited by:
+  - Batch communication:
+  - Replication
+
+## The behavior of a Web crawler is the outcome of a combination of policies:
+ * A selection policy that states which pages to download.
+ *  A re-visit policy that states when to check for changes to the pages.
+ * A politeness policy that states how to avoid overloading websites.
+ * A parallelization policy that states how to coordinate distributed web crawlers.
+## Cho and Garcia-Molina proved：
+* the surprising result that, in terms of average freshness, the uniform policy outperforms the proportional policy in both a simulated Web and a real Web crawl.
+
+## SiteMap
+ * A sitemap is a list of pages of a web site accessible to crawlers
+ * This helps search engine crawlers find pages on the site
+ * XML is used as the standard for representing sitemaps
+
+## cralwer code
+
+```Java
+  public class Controller {
+    public static void main(String[] args) throws Exception {
+    String crawlStorageFolder = "/data/crawl";
+    int numberOfCrawlers = 7;
+    CrawlConfig config = new CrawlConfig();
+    config.setCrawlStorageFolder(crawlStorageFolder);
+
+    PageFetcher pageFetcher = new PageFetcher(config);
+   RobotstxtConfig robotstxtConfig = new RobotstxtConfig();
+   RobotstxtServer robotstxtServer = new RobotstxtServer(robotstxtConfig, pageFetcher);
+   CrawlController controller = new CrawlController(config, pageFetcher, robotstxtServer);
+
+   controller.addSeed("http://www.viterbi.usc.edu/");
+
+   controller.start(MyCrawler.class, numberOfCrawlers);
+    }
+  }
+
+ public class MyCrawler extends WebCrawler {
+    private final static Pattern FILTERS = Pattern.compile(".*(\\.(css|js|gif|jpg"+ "|png|mp3|mp3|zip|gz))$");
+
+   @Override9
+   public boolean shouldVisit(Page referringPage, WebURL url) {
+     String href = url.getURL().toLowerCase();
+    return !FILTERS.matcher(href).matches() && href.startsWith("http://www.viterbi.usc.edu/");
+   }
+
+   @Override
+   public void visit(Page page) {
+   String url = page.getWebURL().getURL();
+   System.out.println("URL: " + url);
+   if (page.getParseData() instanceof HtmlParseData) {
+   HtmlParseData htmlParseData = (HtmlParseData) page.getParseData();
+   String text = htmlParseData.getText();
+   String html = htmlParseData.getHtml();
+   Set<WebURL> links = htmlParseData.getOutgoingUrls();
+   System.out.println("Text length: " + text.length());
+   System.out.println("Html length: " + html.length());
+   System.out.println("Number of outgoing links: " + links.size());
+  }
+ }
+}
+
+ ```
 
 # Lexicon & Text Normalization
 ## An equation of the form y = kx^c is called a power law
@@ -73,6 +166,7 @@ for the numbers 3, 6, 9, and 12
 * Zipf’s law is a power law with c = –1
 * On a log-log plot, power laws give a straight line with slope c.
 * logy = logk + c logx
+
 ## power laws
 * Population of U.S. states
 * Book sales at Amazon.com
@@ -105,8 +199,7 @@ In practice a vocabulary is not really upper-bounded due to proper names, typos,
 ## Zip f law
 * y is the frequency of the word, and x is its ranking in the frequency table. C=-1.
 ## Heap law
-* If V is the size of the vocabulary and n is the number of words:
-* V = Kn^C
+* If V is the size of the vocabulary and n is the number of words， then V = Kn^C
 * Typical constants: K = 10 ~ 100  C = 0.4 ~ 0.6  
 * documents in the collection decides the dictionary size
 
@@ -130,18 +223,19 @@ In practice a vocabulary is not really upper-bounded due to proper names, typos,
 * A term is a (possibly normalized) type that is included in the lexicon
 ## Token normalization
 * is the process of canonicalizing tokens so that matches occur despite superficial differences in the character sequences of the tokens.
-* The standard way to normalize is to implicitly create equivalence classes , which are normally named after one member of the set; this is often called stemming;
-* stemming is the process for reducing inflected (or sometimes derived) words to their stem, base or root form – generally a written word form;
-or to reduce multiple forms of a word to a common base form,
+* The standard way to normalize is to implicitly create equivalence classes , which are normally named after one member of the set; this
+  is often called stemming;
+* stemming is the crude process for reducing inflected (or sometimes derived) words to their stem, base or root form – generally a written word form; or to reduce multiple forms of a word to a common base form,
+
 ## Case-folding
 case-folding is reducing all letters to lower case.
 ## Lemmatization 
-usually refers to doing things properly with the use of a vocabulary and morphological analysis of words, normally aiming to remove inflectional endings only and to return the base or dictionary form of a word, which is known as the lemma
+* usually refers to doing things properly with the use of a vocabulary and morphological analysis of words, normally aiming to remove inflectional endings only and to return the base or dictionary form of a word, which is known as the lemma
 ## stemmer
 * A stemmer written by Martin Porter has  become the de-facto standard algorithm  used for English stemming
 * The Porter Stemming Algorithm(细节还没看)
 
-## Two error mesasurements
+## Two error measurements
 * Over-stemming: two separate inflected words are stemmed to the same root, but should not have been, a false positive
 * Under-stemming: where two separate inflected words should be stemmed to the same root, but are not, a false negative
 
@@ -221,9 +315,9 @@ allinachor： restricts results to pages containing all query terms you specify 
 
 * Auto-completion is a form of relevance feedback
 
-### MMR
-The mean reciprocal rank is a statistical measure for evaluating any process that produces a list of possible responses to a sample of queries, ordered by probability of correctness. The reciprocal rank of a query response is the multiplicative inverse of the rank of the first correct answer
-
+### MRR - Judge quality of answer
+* The mean reciprocal rank is a statistical measure for evaluating any process that produces a list of possible responses to a sample of queries, ordered by probability of correctness. The reciprocal rank of a query response is the multiplicative inverse of the rank of the first correct answer
+* sum(1/rank(Qi)) / N
 # Youtube
 ## YouTube Ranking Factors
 * Meta Data
@@ -234,8 +328,10 @@ The mean reciprocal rank is a statistical measure for evaluating any process tha
 * user’s personal activity
 * co-visitation (count how many times two video are co-watched)
 * Association Rule Mining(公式)
+
 ## ContentID
 * a fingerprint database of copyrighted content, called Content ID
+* to judge if the copyright is violated
 
 #
 ##  bibliographic Coupling
@@ -264,6 +360,7 @@ The impact factor of a journal J in year Y is the average number of citations (f
 * are index pages that provide lots of useful links to relevant content pages (topic authorities).
 
 authority value is computed as the sum of the scaled hub values that point to that page; and a hub value is the sum of the scaled authority values of the pages it points to
+## Tika -- text extracting tool ,written by Java
 
 # Informationn retrieval
 ## IR vs data mangament
@@ -276,25 +373,28 @@ authority value is computed as the sum of the scaled hub values that point to th
 * Vector space models (statistical/algebraic)
 * Probabilistic models
 
-## Term Weights:Inverse Document Frequency
-idfi = inverse document frequency of term i,  
-           = log2 (N/ df i)  
-             (N: total number of documents)
+## Term Weights: Inverse Document Frequency
+* idfi = inverse document frequency of term i,  
+           = log2 (N/ df i)  (N: total number of documents)
 An indication of a term’s discrimination power
 * A typical combined term importance indicator is tf-idf weighting
-* Collection frequency of term is the number of times term t appears in the collection of documents, counting multiple appearances.  
-* No. idf can be used to set different weights for some terms that have different document frequency.
+* Define: Collection frequency of term is the number of times term t appears in the collection of documents, counting multiple appearances.  
+* Does idf has effect on ranking of one term query?
+- No. idf can be used to set different weights for some terms that have different document frequency.
 But if there is only one term, then the term frequency can determine its ranking, no matter what the term's document frequency is.  
 * td-idf: The weight of a term for a document can be determined by its term frequency in this document combined with the term's inverse document frequency.
-* Wij =  tfij .idfi  =  (1 + log tfij )* log2 (N/ dfi)
+* Wij =  tfij.idfi  =  (1 + log tfij )* log2 (N/ dfi)
+* Given a query q, then we score the query against a document d using the formula
+* Score (q, d) = ∑( tf.idft,d) where t is  in q ∩ d；(t,d) is the 角标of idf
 
 ## A similarity measure
 * is a function that computes the degree of similarity between two vectors
-## Cosine SimilarityMeasure Normalized
+## Cosine Similarity Measure Normalized
 * 公式：
 
 ##  P(LCS(C1,C2))
 * THE probablity of the lowest common  subsumer(ancseter) of word c1 and c2
+
 
 # Duplication
 ## De-Duplication
@@ -316,10 +416,16 @@ But if there is only one term, then the term frequency can determine its ranking
 * Use a hash function that examines the entire document
 * pick some fixed random positions for all documents and make the hash function depend only on these;
 * cryptographic hash function  is a hash function which takes an input (or 'message') and returns a fixed-size alphanumeric string, which is called the hash value (sometimes called a message digest, digital fingerprint, digest or a checksum).
+ - The cryptographic hash function has three main properties:
+   - It is extremely easy (i.e. fast) to calculate a hash for any given data.
+   - It is extremely computationally difficult to calculate an alphanumeric text that has a given hash.
+   - A small change to the text yields a totally different hash value.
+
 ## Produce fingerprints and test for similarity -
 * Produce fingerprints and test for similarity
 * Instead of documents defined by n-vector of features, instead compute subsets of words (called shingles) and test for similarity of the sets
-##
+## Jaccard
+* JS(A, B) = size(A intersection B) / size(A union B)
 * Jaccard distance – D(x,y) = 1 – SIM(x,y) or 1 minus the ratio of the sizes of the intersection and union of sets x and y
 * d(A, B) = 1 – s(A, B)
 
@@ -330,93 +436,20 @@ a contiguous subsequence of words in a document is called a shingle
 * adopt a probabilistic approach to reduce the number of comparisons we must make
 For each document D compute the sketchD[ i ] (具体没看)
 
-# Crawlwer
-## basic conpect
-* A web crawler is a computer program that visits web pages in an organized way
-* Google’s crawler is called googlebot; Yahoo’s web crawler is/was called Yahoo! Slurp;Bingbot, standard crawler
-* Robots.txt: There is a protocol that defines the limitations for a web crawler as it visits a website; its definition is here. Website
-request on what can(not) be crawled by placing a robots.txt file in the root directory
+## A distance measure must satisfy 4 properties
+* No negative distances
+* D(x,y) = 0 iff x=y
+* D(x,y) = D(y,x) symmetric
+* D(x,y) <= D(x,z) + D(z,y) triangle inequality
+## five distance measures
+* Euclidean distance
+* Jaccard distance
+* Cosine distance
+* edit distance
+* hamming distance
 
-## 4 normalization rules
-* Convert the scheme and host to lower case.
-* Capitalize letters in escape sequences.
-* Decode percent-encoded octets of unreserved characters.
-* Remove the default port.
-
-## A spider trap
-* is when a crawler re-visits the same page over and over again
-## Coordination of Distributed Crawling three strategies
-* Independent:no coordination, every process follows its extracted links
-* Dynamic assignment: a central coordinator dynamically divides the web into small partitions and assigns each partition to a process
-* Static assignment:Web is partitioned and assigned without a central coordinator before the crawl starts
-
- - Firewall mode:
- - cross-mode
- - exchange mode
-* If exchange mode is used, communication can be limited by:
-Batch communication:
-Replication
-
-## The behavior of a Web crawler is the outcome of a combination of policies:
-A selection policy that states which pages to download.
-A re-visit policy that states when to check for changes to the pages.
-A politeness policy that states how to avoid overloading websites.
-A parallelization policy that states how to coordinate distributed web crawlers.
-## Cho and Garcia-Molina proved the surprising result that, in terms of average freshness, the uniform policy outperforms the proportional policy in both a simulated Web and a real Web crawl.
-## siteMap
-* A sitemap is a list of pages of a web site accessible to crawlers
-* This helps search engine crawlers find pages on the site
-* XML is used as the standard for representing sitemaps
-
-## cralwer code
-
- ``` java
- public class Controller {
- public static void main(String[] args) throws Exception {
- String crawlStorageFolder = "/data/crawl";
- int numberOfCrawlers = 7;
- CrawlConfig config = new CrawlConfig();
- config.setCrawlStorageFolder(crawlStorageFolder);
- /*
- * Instantiate the controller for this crawl.
- */
- PageFetcher pageFetcher = new PageFetcher(config);
- RobotstxtConfig robotstxtConfig = new RobotstxtConfig();
- RobotstxtServer robotstxtServer = new RobotstxtServer(robotstxtConfig, pageFetcher);
- CrawlController controller = new CrawlController(config, pageFetcher, robotstxtServer);
-
- controller.addSeed("http://www.viterbi.usc.edu/");
-
- controller.start(MyCrawler.class, numberOfCrawlers);
-   }
- }
-
-public class MyCrawler extends WebCrawler {
-   private final static Pattern FILTERS = Pattern.compile(".*(\\.(css|js|gif|jpg"+ "|png|mp3|mp3|zip|gz))$");
-
-  @Override9
-  public boolean shouldVisit(Page referringPage, WebURL url) {
-    String href = url.getURL().toLowerCase();
-   return !FILTERS.matcher(href).matches() && href.startsWith("http://www.viterbi.usc.edu/");
-  }
-
-  @Override
-  public void visit(Page page) {
-  String url = page.getWebURL().getURL();
-  System.out.println("URL: " + url);
-  if (page.getParseData() instanceof HtmlParseData) {
-  HtmlParseData htmlParseData = (HtmlParseData) page.getParseData();
-  String text = htmlParseData.getText();
-  String html = htmlParseData.getHtml();
-  Set<WebURL> links = htmlParseData.getOutgoingUrls();
-  System.out.println("Text length: " + text.length());
-  System.out.println("Html length: " + html.length());
-  System.out.println("Number of outgoing links: " + links.size());
- }
-}
-
-
-```
+# unfound in slides
+* Hypernym: a word with a broad meaning that mare specific words fall under; eg. color is a hypernym of red
 -----------------------------------------------------------------------------------
 ## Search Engine Basic
 ## What is Web search?
@@ -457,7 +490,7 @@ A search engine is a program designed to help find information stored on a compu
   - To spot dynamic content typically a URL has a ‘?’ character in it
   - Some dynamic content includes malicious spider traps (infinite loops)
 * The term deep web refers to content missed by search engine crawlers
-
+* The dark web is part of the internet that isn't visible to search engines and requires the use of an anonymizing browser called Tor to be accessed.
 ## User’s Information Needs Are Diverse
 * Informational – want to learn about something (~40%)
 * Navigational – want to go to that page (~25%)
