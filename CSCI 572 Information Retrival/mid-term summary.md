@@ -68,7 +68,7 @@ A search engine is a program designed to help find information stored on a compu
 * Maintaining a user profile
 
 # Web Trend
-## Recent Trends in Web/Internet Development
+## Recent Trends in Web Internet Development
 * Growth in number of users connected
 * Growth in Smartphone use, particularly iOS and Android
 * Growth in digital data, especially photos and video
@@ -90,7 +90,7 @@ A search engine is a program designed to help find information stored on a compu
 * Index their metadata
 * Identify what language they belong to
 
-## Web Characteristics WhenViewed as a Graph
+## Web Characteristics When Viewed as a Graph
 
 * Significant duplication
 * High linkage
@@ -153,11 +153,11 @@ for the numbers 3, 6, 9, and 12
 * Assessments have to be binary
 * Heavily skewed by collection/authorship
 
-## Google's Search Quality RatingGuidelines Document
+## Google's Search Quality Rating Guidelines Document
 * Google relies on raters, working in many countries and languages around the world
 * The data they generate is rolled up statistically to give
 
-## Google's 4-Step Process forChanging Their Search Algorithm
+## Google's 4-Step Process for Changing Their Search Algorithm
 1. Precision Evaluations
   People use the Guidelines to rate
   search results
@@ -298,7 +298,7 @@ Stop words: removing words that are so common they provide no information
 
 #
 
-##  How Google Treats Querieswith Boolean Operators
+##  How Google Treats Queries with Boolean Operators
 * All query terms are implicitly ANDed
 * OR has higher precedence than AND
 * Google/Bing queries are not case sensitive.
