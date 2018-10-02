@@ -91,11 +91,15 @@ for the numbers 3, 6, 9, and 12
  * is when a crawler re-visits the same page over and over again
 ## Handing Spam
 * The first generation of spam consisted of pages with a high number of repeated terms, so as to score high on search engines that ranked by word frequency
-* Cloacking: The second generation of spam used a technique called cloaking;
+* Cloaking: The second generation of spam used a technique called cloaking;
 When the web server detects a request from a crawler, it returns a different page than the page it returns from a user request
 
 * Doorway: A third generation, called a doorway page, contains text and metadata chosen to rank highly on certain search keywords, but when a browser requests the doorway page it instead gets a more “commercial” page
 
+## two impropre technique used to enhance a web pages ranking in search result
+* Cloaking: The second generation of spam used a technique called cloaking;
+When the web server detects a request from a crawler, it returns a different page than the page it ret
+* page jacking: steal the content of a website and copy it into another site to get a higher paper ranking
 ## Three strategies Coordination of Distributed Crawling
  * Independent: no coordination, every process follows its extracted links
  * Dynamic assignment: a central coordinator dynamically divides the web into small partitions and assigns each partition to a process
@@ -235,13 +239,18 @@ In practice a vocabulary is not really upper-bounded due to proper names, typos,
   is often called stemming;
 * stemming is the crude process for reducing inflected (or sometimes derived) words to their stem, base or root form – generally a written word form; or to reduce multiple forms of a word to a common base form,
 
+* 1.stop words: some most common words which have little value in selecting documents to match user's need.
+* 2.case folding: converting all letters to lower case.
+* 3.stemming: reduce multiple forms of a word to a common base form.
 ## Case-folding
 case-folding is reducing all letters to lower case.
 ## Lemmatization 
 * usually refers to doing things properly with the use of a vocabulary and morphological analysis of words, normally aiming to remove inflectional endings only and to return the base or dictionary form of a word, which is known as the lemma
 ## stemmer
 * A stemmer written by Martin Porter has  become the de-facto standard algorithm  used for English stemming
-* The Porter Stemming Algorithm(细节还没看)
+* The Porter Stemming Algorithm(细节还没看):
+   - A stemming algorithm created by Martin Porter to reduce multiple forms of a word to a common base.  
+It consists of some suffix stripping rules and for a given set of rules only the one with the longest suffix matching is applied
 
 ## Two error measurements
 * Over-stemming: two separate inflected words are stemmed to the same root, but should not have been, a false positive
@@ -276,15 +285,16 @@ Case folding: converting all uppercase letters to lower case
 Stemming: reducing words to their morphological roots
 Stop words: removing words that are so common they provide no information
 
-## Skip pointers
+## Skip pointers--- speed up the computation of search result
 * To speed up the merging of postings we use the technique of Skip Pointers
 * Skip pointers are added at indexing time; they are shortcuts, and they only help for AND queries and they are useful when the corpus is relatively static
 * A simple heuristic for placing skips, is that for a postings list of length P, use sqrt{P} evenly-spaced skip pointers.
 ## Inverted index systems
 * dictionary: index term + #docs
 * posting list: j-th document, frequencey of term
-
-## Phrase Query
+## advantage of adding position on inverted index
+It can be used for phrase queries as one word must exist next to another word in the document to match the phrase.
+## Phrase Query --- speed up the computation of search result
 * Bi-word indexes (also called 2-grams or 2 shingles):
   1. define: A bi-word (or a 2-gram) is a consecutive pair of terms in some text
   2. 优化：
@@ -292,8 +302,9 @@ Stop words: removing words that are so common they provide no information
       - To salvage the bi-word indexing method on these examples one can use part-of-speech tagging： Part-of-speech taggers classify words as nouns, verbs, etc
 * Positional indexes
 
-#
-
+# Query formulation
+## relevance feedback
+* After initial retrieval results are presented, allow user to provide feedback on the relevance of one or more of the retrieval the document
 ##  How Google Treats Queries with Boolean Operators
 * All query terms are implicitly ANDed
 * OR has higher precedence than AND
@@ -414,6 +425,15 @@ But if there is only one term, then the term frequency can determine its ranking
 * the URL’s protocol can be distinct (http, https), but still deliver the same document
 * the URL’s path and/or page name can be distinct
 * Mirroring is the single largest cause of duplication on the web
+##  Three reason for detecting mirroring
+1. Mirroring is the largest cause of duplication on the web.  
+2. One mirror sites would contain lots of duplicated pages and remove the site would remove lots of duplicated pages.
+3. Detecing mirrors is fast and is very efficient.
+## Why Detect Exact Duplicates
+* Smarter crawling
+* Better connectivity analysis
+* Add redundancy in result listings
+* Reduce Crawl Time:
 ## Why Detect Near Duplicates
 * Clustering
 * Data extraction
@@ -451,11 +471,15 @@ For each document D compute the sketchD[ i ] (具体没看)
 * D(x,y) = D(y,x) symmetric
 * D(x,y) <= D(x,z) + D(z,y) triangle inequality
 ## five distance measures
-* Euclidean distance
-* Jaccard distance
-* Cosine distance
-* edit distance
-* hamming distance
+* Euclidean distance:D([x1…xn], [y1,…,yn]) = sqrt(Sum(xi-yi)^2) i=1…n
+
+* Jaccard distance: – D(x,y) = 1 – SIM(x,y) or 1 minus the ratio of the sizes of the intersection and union of sets x and y
+
+* Cosine distance: the cosine distance between two points (two n element vectors) is the angle that the vectors to those points make; in the range 0 to 180 degrees
+
+* edit distance: the distance between two strings is the smallest number of insertions and deletions of single characters that will convert one string into the other
+
+* hamming distance: between two vectors is the number of components in which they differ (usually used on Boolean vectors)
 
 # unfound in slides
 * Hypernym: a word with a broad meaning that mare specific words fall under; eg. color is a hypernym of red
