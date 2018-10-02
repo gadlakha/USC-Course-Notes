@@ -476,8 +476,12 @@ The impact factor of a journal J in year Y is the average number of citations (f
 # Unfound in slides
 * Hypernym: a word with a broad meaning that mare specific words fall under; eg. color is a hypernym of red
 * Tika -- text extracting tool ,written by Java
------------------------------------------------------------------------------------
-## Search Engine Basic
+
+#
+
+———————————The following is before week 1———————————————————
+
+# Search Engine Basic
 ## What is Web search?
 * Providing access to heterogeneous, distributed information that is publicly available on the World Wide Web
 * Multi-billion dollar business
