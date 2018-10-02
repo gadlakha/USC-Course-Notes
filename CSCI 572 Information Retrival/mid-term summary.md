@@ -4,18 +4,18 @@
 ## Precision and Recall
 
 
-        |                | Relevance      | Not relevance   |
-        |   -----        |   ------       |  ----           |
-        |   retrieved    |  true positive |  false positive |
-        |  not retrieved | false negative |  true negative  |
+  |                | Relevance      | Not relevance   |
+  |   -----        |   ------       |  ----           |
+  |   retrieved    |  true positive |  false positive |
+  |  not retrieved | false negative |  true negative  |
 
 * T/F -- expected ; Pos - > retrived ; neg-> not retrived
 *  Precision = tp/(tp + fp) --- number of items retrived / all retrived items
 * Recall = tp/(tp + fn) 在所有有关的比列 --- number of relevant items retrived / all retrived items
-* The accuracy of an engine is defined as:
+* The accuracy rate of an engine is defined as:
    - the fraction of these classiﬁcations that are correct
           (tp + tn) / ( tp + fp + fn + tn)
-
+* The error rate : (fp + fn) / ( tp + fp + fn + tn)
 
 * For web applications, Precision is more important than Recall
 * In a good system, precision decreases as the number of docs retrieved (or recall) increases
@@ -95,7 +95,7 @@ When the web server detects a request from a crawler, it returns a different pag
 
 * Doorway: A third generation, called a doorway page, contains text and metadata chosen to rank highly on certain search keywords, but when a browser requests the doorway page it instead gets a more “commercial” page
 
-## two impropre technique used to enhance a web pages ranking in search result
+## Two impropre technique used to enhance a web pages ranking in search result
 * Cloaking: The second generation of spam used a technique called cloaking;
 When the web server detects a request from a crawler, it returns a different page than the page it ret
 * page jacking: steal the content of a website and copy it into another site to get a higher paper ranking
@@ -103,12 +103,10 @@ When the web server detects a request from a crawler, it returns a different pag
  * Independent: no coordination, every process follows its extracted links
  * Dynamic assignment: a central coordinator dynamically divides the web into small partitions and assigns each partition to a process
  * Static assignment: Web is partitioned and assigned without a central coordinator before the crawl starts
-  - Firewall mode:
-  - cross-mode
-  - exchange mode
- * If exchange mode is used, communication can be limited by:
-  - Batch communication:
-  - Replication
+   - Firewall mode:
+   - cross-mode
+   - exchange mode
+     * If exchange mode is used, communication can be limited by: Batch communication and Replication
 
 ## The behavior of a Web crawler is the outcome of a combination of policies:
  * A selection policy that states which pages to download.
@@ -123,7 +121,7 @@ When the web server detects a request from a crawler, it returns a different pag
  * This helps search engine crawlers find pages on the site
  * XML is used as the standard for representing sitemaps
 
-## cralwer code
+## Crawler code
 
 ```Java
   public class Controller {
@@ -225,7 +223,7 @@ When the web server detects a request from a crawler, it returns a different pag
  * D(x,y) = 0 iff x=y
  * D(x,y) = D(y,x) symmetric
  * D(x,y) <= D(x,z) + D(z,y) triangle inequality
-## five distance measures
+## Five distance measures
  * Euclidean distance:D([x1…xn], [y1,…,yn]) = sqrt(Sum(xi-yi)^2) i=1…n
 
  * Jaccard distance: – D(x,y) = 1 – SIM(x,y) or 1 minus the ratio of the sizes of the intersection and union of sets x and y
@@ -265,7 +263,7 @@ When the web server detects a request from a crawler, it returns a different pag
 ## A similarity measure
  * is a function that computes the degree of similarity between two vectors
 ## Cosine Similarity Measure Normalized
- * 公式：
+ * 公式：向量积 / 向量模长乘积
 
 ##  P(LCS(C1,C2))
  * THE probablity of the lowest common  subsumer(ancseter) of word c1 and c2
@@ -278,21 +276,15 @@ When the web server detects a request from a crawler, it returns a different pag
  * On a log-log plot, power laws give a straight line with slope c.
  * logy = logk + c logx
 
-## power laws
+## Power laws example
  * Population of U.S. states
  * Book sales at Amazon.com
  * Node degrees in the web graph
- * Frequency of accesses to web pages
-   example1: the access counts on Wikipedia pages, with s approximately equal to 0.3
-  * Words in the English language
-  for instance, in Shakespeare’s play Hamlet with s approximately 0.5
-  * Sizes of settlements
-  * Income distributions among individuals
-  * Size of earthquakes
-  * Notes in musical performances
+* Size of earthquakes
 
-## distribution of frequency of different words and the growth of vocabulary size
-  factors affect the performance of information retrieval and can be used to select appropriate term weights and other aspects of an IR system.
+
+## 一句话
+Distribution of frequency of different words and the growth of vocabulary size factors affect the performance of information retrieval and can be used to select appropriate term weights and other aspects of an IR system.
 
 ## Heavy tailed distribution
  * A few words are very common.
@@ -303,7 +295,7 @@ When the web server detects a request from a crawler, it returns a different pag
  * Good News: Stopwords will account for a large fraction of text so eliminating them greatly reduces inverted-index storage costs.
  * Bad News: For most words, gathering sufficient data for meaningful statistical analysis is difficult since they are extremely rare.
 
-## vocabulary
+## Vocabulary
  vocabulary growth determines how the size of the inverted index will scale with the size of the corpus.
  In practice a vocabulary is not really upper-bounded due to proper names, typos, etc.
 
@@ -319,7 +311,7 @@ When the web server detects a request from a crawler, it returns a different pag
  * Usually it includes some linguistic information
  * Often some semantic information is included:
 
-## challenges for Lexicon
+## Challenges for Lexicon
  * Determining the Characters
  * Documents being indexed can include items from many different languages
   A single index may contain terms from many languages.
@@ -328,8 +320,8 @@ When the web server detects a request from a crawler, it returns a different pag
 ## Tokenization:
  * The task of chopping a document into pieces called tokens, and possibly throw away possible characters.
 
-## A token
- * is an instance of a sequence of characters in some particular document that are grouped together as a useful semantic unit
+## Token
+ * a token is an instance of a sequence of characters in some particular document that are grouped together as a useful semantic unit
  * A term is a (possibly normalized) type that is included in the lexicon
 ## Token normalization
  * is the process of canonicalizing tokens so that matches occur despite superficial differences in the character sequences of the tokens.
@@ -337,11 +329,6 @@ When the web server detects a request from a crawler, it returns a different pag
    is often called stemming;
  * stemming is the crude process for reducing inflected (or sometimes derived) words to their stem, base or root form – generally a written word form; or to reduce multiple forms of a word to a common base form,
 
- * 1.stop words: some most common words which have little value in selecting documents to match user's need.
- * 2.case folding: converting all letters to lower case.
- * 3.stemming: reduce multiple forms of a word to a common base form.
-## Case-folding
- case-folding is reducing all letters to lower case.
 ## Lemmatization 
  * usually refers to doing things properly with the use of a vocabulary and morphological analysis of words, normally aiming to remove inflectional endings only and to return the base or dictionary form of a word, which is known as the lemma
 ## Stemmer
@@ -367,7 +354,7 @@ When the web server detects a request from a crawler, it returns a different pag
  * Document Parsing and Analysis
  * Document Identification
  * Indexing
-## two methods for ranking result in Lucene/Solr
+## Two methods for ranking result in Lucene/Solr
  * TokenFilters
  * Tokenizers
 
@@ -378,19 +365,21 @@ When the web server detects a request from a crawler, it returns a different pag
 ## Term-Document Incidence Matrix
  * it is a sparse matrix where rows represent terms and columns represent documents
  * are Naturally Sparse
-## Terms in the inverted file index may be refined:
+## Terms in the inverted file index may be refined by(common ways to token normalization):
  * Case folding: converting all uppercase letters to lower case
  * Stemming: reducing words to their morphological roots
  * Stop words: removing words that are so common they provide no information
-## Skip pointers--- speed up the computation of search result
+
+## Inverted index systems
+  * dictionary: index term + #docs
+  * posting list: j-th document, frequencey of term
+## Advantage of adding position on inverted index
+  * It can be used for phrase queries as one word must exist next to another word in the document to match the phrase.
+## Skip pointers --- speed up the computation of search result
  * To speed up the merging of postings we use the technique of Skip Pointers
  * Skip pointers are added at indexing time; they are shortcuts, and they only help for AND queries and they are useful when the corpus is relatively static
  * A simple heuristic for placing skips, is that for a postings list of length P, use sqrt{P} evenly-spaced skip pointers.
-## Inverted index systems
- * dictionary: index term + #docs
- * posting list: j-th document, frequencey of term
-## advantage of adding position on inverted index
- It can be used for phrase queries as one word must exist next to another word in the document to match the phrase.
+
 ## Phrase Query --- speed up the computation of search result
  * Bi-word indexes (also called 2-grams or 2 shingles):
    1. define: A bi-word (or a 2-gram) is a consecutive pair of terms in some text
@@ -404,7 +393,7 @@ When the web server detects a request from a crawler, it returns a different pag
  * Video Quality
  * Number of views, likes, shares and links
  * Subtitles and Closed Captions
-## recommondation system
+## Recommendation system
  * user’s personal activity
  * co-visitation (count how many times two video are co-watched)
  * Association Rule Mining(公式)
@@ -415,7 +404,7 @@ When the web server detects a request from a crawler, it returns a different pag
 
 
 # 7. Query formulation
-## relevance feedback
+## Relevancee feedback
 * After initial retrieval results are presented, allow user to provide feedback on the relevance of one or more of the retrieval the document
 ##  How Google Treats Queries with Boolean Operators
 * All query terms are implicitly ANDed
@@ -451,7 +440,7 @@ allinachor： restricts results to pages containing all query terms you specify 
 * sum(1/rank(Qi)) / N
 
 # 8. PageRank
-##  bibliographic Coupling
+##  Bibliographic Coupling
 The bibliographic coupling of two documents A and B is the number of documents cited by both A and B.
 ## Journal Impact Factor
 The impact factor of a journal J in year Y is the average number of citations (from indexed documents published in year Y) to a paper published in J in year Y1 or Y2.
@@ -460,25 +449,31 @@ The impact factor of a journal J in year Y is the average number of citations (f
 * A link to a page counts as a vote of support.
 * PR(A) = (1-d) + d (PR(T1)/C(T1) + ... + PR(Tn)/C(Tn))
 * That the PageRanks form a probability distribution over web pages, so the sum of all web pages' PageRanks will be one.
+* PageRank is just one factor Google uses to determine a page’s relevance.
+* disavow” backlinks is to inform Google you do NOT want certain links pointing to your pages to be counted in their PageRank computation
+## Ways to improve pagerank
+* Increasing the internal links in your site
+* If a particular page is highly important – use a hierarchical structure with the important page at the “top”.
 * Use Site Maps to improve
 
-## Rank Sinks: Occur when pages get in infinite link cycles.
+## Rank Sinks
+* Occur when pages get in infinite link cycles.
 
 ## Problem of Pagerank-- sovled by damper factor
 * Spider Traps: A group of pages is a spider trap if there are no links from within the group to outside the group.
 * Dangling Links: A page contains a dangling link if the hypertext points to a page with no outgoing links.
 * Dead Ends: are simply pages with no outgoing links.
 
-## HITS--bipartite graph
-## Authorities
-* are pages that are recognized as providing significant, trustworthy, and useful information on a topic.
-## Hubs
-* are index pages that provide lots of useful links to relevant content pages (topic authorities).
+## HITS -- bipartite graph
+* Authorities
+  -  are pages that are recognized as providing significant, trustworthy, and useful information on a topic.
+* Hubs
+  - are index pages that provide lots of useful links to relevant content pages (topic authorities).
 
-authority value is computed as the sum of the scaled hub values that point to that page; and a hub value is the sum of the scaled authority values of the pages it points to
+* authority value is computed as the sum of the scaled hub values that point to that page; and a hub value is the sum of the scaled authority values of the pages it points to
 
 
-# unfound in slides
+# Unfound in slides
 * Hypernym: a word with a broad meaning that mare specific words fall under; eg. color is a hypernym of red
 * Tika -- text extracting tool ,written by Java
 -----------------------------------------------------------------------------------
