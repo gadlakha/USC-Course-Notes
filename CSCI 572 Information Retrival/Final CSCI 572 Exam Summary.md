@@ -524,3 +524,42 @@ Ps: the Centroid of a cluster is the component-wise average of the vectors in a 
 
 * The mean reciprocal rank is a statistical measure for evaluating any process that produces a list of possible responses to a sample of queries, ordered by probability of correctness. 
 * Formulate: MMR = Sum(1/rank i) / Q
+
+## 7. Classfication
+
+### Classfication Methods
+
+* Manual classification: Yahoo! Directory
+* Using Vector Spaces: Two premise
+  - Documents in the same class form a contiguous region of space(contiguity hypothesis)
+  - Documents from different classes don’t overlap (much)
+
+### Relevance Feedback
+
+* Define: User feedback on relevance of docs in initial set of results, which can be iterations
+
+### Rocchio Method is used for Relevance feedback
+
+- Rocchio is limited to determining two classes: relevant and non-relevant documents
+- Assign d to class c iff |u(c) - v(d)| < |u(c) - v(d)|  - b, assign d to class c iff the distance from d to c is less than the distance  to all other centroids, even including a small factor b 
+- The centroid is the center of mass (or vector average) of a set of points.The centroid may not correspond to a document in your set.
+- Rocchio chooses the centroid as the representative for each class 
+- Classification Rule: Given a new document, take its vector representation and determine the nearest centroid
+- Note: This method does not guarantee that classifications are consistent with the given training data
+- Boundaries in  Rocchio Classification are Hyperplanes: divide any line, any plane, any higher dimensional spaces
+- 具体算法没看
+
+### kNN- k Nearest Neighbor Method ～ second classfication algorithm
+
+* Distance function measurements: Euclidean(commonly used), Manhattan, Minkowski
+* Other names: Case-based learning ,Memory-based learning, Lazy learning
+* Non-learning step, just store the labeled training examples
+* Two phases: training phase(consists only of storing the feature vectors and class labels of the training samples) and classification phases(k is a user-defined constant, and an unlabeled vector (a query) is classified by assigning the label which is most frequent among the k training samples nearest to that query point.)
+* Choosing the optimal value for K is best done by first inspecting the data; generally, a large k value is more precise as it reduces the overall noise; Historically, the optimal k is between 3- 10
+* Two drawbacks: performance, distance metric
+* No feature selection and training necessary; sacles well with large number of classes; mostly, more accurate than R0cchio
+
+### Voroni Diagram
+
+* Define: A Voronoi diagram is a partitioning of a plane into regions based on distance to points in a specific subset of the plane
+* 和knn联系没太看懂
