@@ -368,5 +368,121 @@ typing quickly, keyboard adjency, inconsistent rules, ambiguous word breaking, n
 * Levenshtein Algorithm: DP, time--O(mn), space--O(nm), Backtrace--O(n+m)
 * Weighted Edit Distance: why? –spell correction: some letters are more likely to be mistyped than others
 
+## 6. Clustering
 
+### What's Clustering?
 
+* Clustering: the process of grouping a set of objects into classes of similar objects
+* Clustering is the most common form of unsupervised learning(learning from raw data, as opposed to supervised learning where a classification of examples is given)
+
+### Reason for Search Engines cluster documents
+
+* For improving recall in search applications
+* For speeding up vector space retrieval
+* Cleaner user interface
+* Automatic thesaurus generation by clustering related terms 
+
+  Ps: Yippy.com emphsizes clusters of results;  
+
+​       Yahoo! Hierarchy isn’t clustering but is the kind of output you want from clustering 
+
+### What is a Good clustering?
+
+* Internal criteria : A good clustering will produce high quality clusters in which:
+
+   –the intra-class (that is, intra-cluster) similarity is high
+
+   –the inter-class similarity is low
+
+### Three Criteria of Adequacy for clustering methods
+
+* produced clustering is stable even under significant growth
+* The method is stable in the sense that small errors in the description of objects lead to small changes in the clustering
+* The method is independent of the initial ordering of the objects
+
+### Classification VS Clustering
+
+* Classification is supervised learning( given a set of predefined classes and want to know which class a new object belongs to) and clustering is unsupervised learning(tries to group a set of objects and find whether there is some relationship between the objects)
+
+  –Clustering requires a. an algorithm, b. a similarity measure, and c. a number of clusters
+
+  –classification has each document labeled in a class and an algorithm that assigns new documents to one of the classes
+
+### Hard vs Soft Clustering
+
+* Hard clustering: Each document belongs to exactly one cluster
+* Soft clustering: A document can belong to more than one cluster
+
+### What definition of Similarity/Distance Will Be Used
+
+Cosine similarity or Euclidean distance
+
+### Clustering Algorithms
+
+* Partitioning Based Algorithms: divide a set of N items into K clusters (top-down)
+* Hierarchica：agglomerative and divisivel
+
+### K-Means  Clustering Algorithm
+
+* What is that?
+
+  - Choose k random data items out of the n items; call these items the means; they designate the prototype or name of the cluster
+
+  - Refine it iteratively
+    - Associate each of the n-k items with one of the k clusters choosing the cluster  that it is nearest to; 
+
+* Optimal K-Means Clustering is NP-hard
+
+* A Popular Version of the  K-Means Clustering Algorithm has two steps: 
+
+   - Assignment step: Assign each observation to the cluster whose mean yields the least within-cluster 
+
+     sum of squares.
+
+   - update step: Calculate the new means to be the centroids of the observations in the new clusters.
+
+* Time Complexity: •O(iknm), m is the size of the vector, n is the number of vectors (items), k is the number of clusters, i depends upon convergence
+
+### Hierarchical Clustering Algorithms
+* Hierarchical Agglomerative Clustering Algorithm - a Bottom Up Approach
+
+  –1. Place each of N documents into a class of its own.
+
+  –2. Compute all pairwise document-document similarity coefficients --- Total of N(N-1)/2 coefficients
+
+  –3. Form a new cluster by combining the most similar pair of current clusters i and j 
+
+  –4.Repeat step 3 if the number of clusters left is great than 1.
+
+* Divisive Clustering Algorithm
+
+### The methods to compute the distance between two clusters
+
+Ps: the Centroid of a cluster is the component-wise average of the vectors in a cluster, which is itself a vector
+
+1.Center of Gravity: clusters whose centroids are the most cosine similar
+
+2.Average Link: average distance between pairs of elements
+
+3.Single Link: distance of the most cosine similar
+
+4.Complete Link: distance of the furthest points, the least cosine similar
+
+### Dendrogram
+
+* A dendrogram is a tree diagram frequently used to illustrate the arrangement of the clusters produced by hierarchical clustering
+
+### Two ways to label clusters
+
+* Show titles of typical documents
+* show words/phrases proominent in cluster
+
+### Ways to evaluate Clustering algorithm(from best to weakest) 
+
+* Purely quantitative measures > •Ground “truth” comparison > user inspection > anecdotal
+
+### Purity and Rand Index
+
+* Purity Measure - accuracy is measured by the number of correctly assigned documents divided by the total number of documents;
+
+* The Rand index (RI) measures the percentage of decisions that are correct. 计算还没看
