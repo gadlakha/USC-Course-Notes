@@ -484,5 +484,43 @@ Ps: the Centroid of a cluster is the component-wise average of the vectors in a 
 ### Purity and Rand Index
 
 * Purity Measure - accuracy is measured by the number of correctly assigned documents divided by the total number of documents;
-
 * The Rand index (RI) measures the percentage of decisions that are correct. 计算还没看
+
+## 7. Question Answering
+
+### What is that?
+
+* Question Answering (QA) is concerned with building systems that automatically answer questions posed by humans in a natural language. It combines information retrieval and natural language processing.
+* Google Approach:
+  - Original approach: find the question as a string on the web, return next sentence. Improved by introducing Knowlegde graph and N-grams
+
+### Some prouducts designed for QA
+
+* Siri, Ask.com, IBM's Watson, Google's knowledge graph
+
+### 3 Main phases for QA
+
+1. question processing: Captures the semantics of the question. 
+2.  Passage retrieval: Extracts and ranks passages using surface-text techniques  
+3.  answer processing: Extracts and ranks answers using NL techniques
+
+### Ranking candidate answers approach
+
+* Part-of-Speech Tagging  •Parsing.  Named Entity Extraction.  •Determining Semantic Relations •Dictionaries
+
+### Microsoft AskMSR
+
+* AskMSR is a question answering system developed at Microsoft, rather than doing sophisticated linguistic analyses it relies upon information scattered around the web
+
+* Steps:
+  1.  Query rewriting:Some query rewrites are more reliable than others
+  2. Query Search Engine: Send all rewrites to a Web search engine; only rely on search engine's "snippets"
+  3. Mining N-Grams: Weight of an n-gram: occurrence count, each weighted by “reliability” (weight) of
+     rewrite that fetched the document
+  4. Filtering N-Grams: match "data-type filters" of each question type
+  5. Tiling the Answers: merged, discard old n-grams; repeat, utile no more overlap
+
+### Mean Reciprocal Rank(MMR)-- judge the quality of answers
+
+* The mean reciprocal rank is a statistical measure for evaluating any process that produces a list of possible responses to a sample of queries, ordered by probability of correctness. 
+* Formulate: MMR = Sum(1/rank i) / Q
