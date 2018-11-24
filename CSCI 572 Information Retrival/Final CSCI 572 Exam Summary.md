@@ -401,7 +401,9 @@ typing quickly, keyboard adjency, inconsistent rules, ambiguous word breaking, n
   - Webmasters: Provides webmasters the ability to add useful information to their web search result snippets to help Google make sense of their bits.
   - Purpose Provides more information to a user about the content that exists on page so they can decide which result is more relevant for their query. 
 * Google, Yahoo, and Bing agree on a single standard of rich snippet  on microdata format
-* Entities in Rich Snippet Encodings: Software applications, events, people, products, videos...
+* Entities in Rich Snippet Encodings: Software applications, events, people, products, videos and breadcrumb( a breadcrumb trail on a page indicates the page's position in 
+  the  site hierarchy. A user can navigate all the way up in the site hierarchy, one level at a time, by starting from the last breadcrumb in the breadcrumb trail
+• for example, Books › Authors › Ann Leckie ›...
 
 ## 7. Clustering
 
@@ -539,9 +541,17 @@ Ps: the Centroid of a cluster is the component-wise average of the vectors in a 
 2.  Passage retrieval: Extracts and ranks passages using surface-text techniques  
 3.  answer processing: Extracts and ranks answers using NL techniques
 
+### Ranking Retrieved Passages 6 criteria
+1. The number of named entities of the right type in the passage
+2. The number of question keywords in the passage
+3. The longest exact sequence of question keywords that occurs in the passage
+4. The rank of the document from which the passage was extracted
+5. The proximity of the keywords from the original query to each other. 
+6. The N-gram overlap between the passage and the question;
+
 ### Ranking candidate answers approach
 
-* Part-of-Speech Tagging  •Parsing.  Named Entity Extraction.  •Determining Semantic Relations •Dictionaries
+* Part-of-Speech Tagging , Parsing,  Named Entity Extraction, Determining Semantic Relations •Dictionaries
 
 ### Microsoft AskMSR
 
