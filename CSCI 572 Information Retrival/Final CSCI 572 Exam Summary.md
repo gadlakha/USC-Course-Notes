@@ -314,8 +314,6 @@ for process 1:
 * Reorganize the Inverted List:order all postings by g(d) the authority measure
 * High and Low Lists Heuristic-•For each term, we maintain two postings lists called high and low
 
-
-
 ### Net Score
 
 * Define: a simple total score combining cosine relevance and authority
@@ -368,7 +366,44 @@ typing quickly, keyboard adjency, inconsistent rules, ambiguous word breaking, n
 * Levenshtein Algorithm: DP, time--O(mn), space--O(nm), Backtrace--O(n+m)
 * Weighted Edit Distance: why? –spell correction: some letters are more likely to be mistyped than others
 
-## 6. Clustering
+## 6. Rich Text Snippets
+
+### Snippet
+
+* Google introduced Snippet, a short description of, or excerpt from, a website which appears in Google search results. Snippets are created automatically based on the site's content and the query terms  
+* Snippets are computed at query time
+* Snippets Can Vary for a Single Site Depending Upon the Query
+* if the snippet begins with ellipses (. . . . ) that indicates the snippet was excerpted from a larger body of text and text preceding the ellipses was omitted
+* when ellipses follow at the end of the snippet, the snippet was truncated
+* the maximum length of a snippet is 156 characters
+* Google uses the meta description (if there is one) as the default for a snippet if there is an Open Directory Project listing for a website, Google uses its meta description over the meta description in the web page
+
+### Snippets are an Instance of Summarization
+
+* Two general approaches to automatic summarization:
+
+  •[extraction](https://en.wiktionary.org/wiki/Extraction)  Extractive methods work by selecting a subset of existing words, phrases, or sentences in the original text to form the summary
+
+  •[abstraction](https://en.wikipedia.org/wiki/Abstract_(summary)) abstractive methods build an internal semantic representation and then use natural language generation techniques to create a summary that is closer to what a human might express 
+
+### Featured Snippets
+
+* Three types: 1.Paragraph featured snippet. 2.List featured snippet. 3.Table featured snippet
+
+### PAA(People Also Ask)
+
+* The “People Also Ask” box is a Google universal Search Result Page result that answers questions related to the searcher’s initial query. 
+
+### Rich Snippet
+
+* Define: A rich snippet shows extra information between the URL and the description. 
+* Advantages of Rich Snippets
+  - Webmasters: Provides webmasters the ability to add useful information to their web search result snippets to help Google make sense of their bits.
+  - Purpose Provides more information to a user about the content that exists on page so they can decide which result is more relevant for their query. 
+* Google, Yahoo, and Bing agree on a single standard of rich snippet  on microdata format
+* Entities in Rich Snippet Encodings: Software applications, events, people, products, videos...
+
+## 7. Clustering
 
 ### What's Clustering?
 
@@ -486,7 +521,7 @@ Ps: the Centroid of a cluster is the component-wise average of the vectors in a 
 * Purity Measure - accuracy is measured by the number of correctly assigned documents divided by the total number of documents;
 * The Rand index (RI) measures the percentage of decisions that are correct. 计算还没看
 
-## 7. Question Answering
+## 8. Question Answering
 
 ### What is that?
 
@@ -525,7 +560,7 @@ Ps: the Centroid of a cluster is the component-wise average of the vectors in a 
 * The mean reciprocal rank is a statistical measure for evaluating any process that produces a list of possible responses to a sample of queries, ordered by probability of correctness. 
 * Formulate: MMR = Sum(1/rank i) / Q
 
-## 7. Classfication
+## 9. Classfication
 
 ### Classfication Methods
 
@@ -563,3 +598,56 @@ Ps: the Centroid of a cluster is the component-wise average of the vectors in a 
 
 * Define: A Voronoi diagram is a partitioning of a plane into regions based on distance to points in a specific subset of the plane
 * 和knn联系没太看懂
+
+
+
+## 10.  Click Fraud & Legal Issue
+
+### Two basic problems with pay-per-click model
+
+* Good click-through rates(CTRs) are still not indicative of good conversion rate
+* not offer any "built-in" fundamental protection mechanism against click fraud
+
+### Definition of Invalid Clicks
+
+Click Fraud occurs in pay-per-click online advertising when a person, automated script or computer program imitates a
+legitimate user of a web browser clicking on an ad, for the purpose of generating an improper charge per click
+
+Ps: Google utiliize 4 layers of click fraud detection,which can be divided into Filters, Offline analysis and investigations 
+
+### Anomalous Behavior to indicate Click Fradu
+
+* Keyword performace
+* Abnormal number of clicks from the same IP address
+* Decline in the number of conversions 
+* Large numbers of visitors who leave your site quickly 
+
+### Botnets
+
+* Define: A botnet is a large collection of well-connected compromised machines, that interact to take part in some distributed task
+
+* Botnets attacks: Distributed Denial of Service (DDoS), Information Leakage, Click Fraud , Identity Fraud
+
+### Tuzhilin
+
+* Fundamental problem: There is no conceptual definition of invalid clicks that can be operationalized 
+
+* Confusion matrix
+
+  |              |         | Click classified by filters as |                     |
+  | ------------ | ------- | ------------------------------ | ------------------- |
+  |              |         | Invalid                        | Valid               |
+  | Actual Click | Invalid | True Positive (TP)             | False Negative (FN) |
+  |              | Valid   | False Positive (FP)            | True Negative (TN)  |
+
+Note that TP + TN + FP + FN = N. 
+
+and the accuracy rate of a filter is equal to (TP + TN)/N 
+
+and the error rate to  (FP + FN)/N. 
+
+### Intellectual Property
+
+* Categories: copyright(Books, maps, paintings, web page, charts), patents, trademarks, trade secrets
+* Trademark: •A trademark is a word, words, phrase, symbol or design that is legally registered as representing a company or product. 
+* A trade secret is a formula, practice, process, design, instrument, pattern, or compilation of information which is not generally known or reasonably ascertainable, by which a business can obtain an economic advantage over competitors or customers. 
