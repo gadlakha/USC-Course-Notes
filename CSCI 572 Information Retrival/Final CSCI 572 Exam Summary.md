@@ -14,7 +14,7 @@
 
 
 
-  ### Hadoop
+### Hadoop
 
 * Apache Hadoop is an open-source implementation of map/reduce written in Java for distributed storage and distributed processing of very large data sets on computer clusters built from commodity hardware.  
 * The core of Apache Hadoop consists of a storage part, known as Hadoop Distributed File System (HDFS), and a processing part called MapReduce. 
@@ -158,22 +158,20 @@
 
 * There are many companies who claim to do SEO: Boostability, Icrossing,Inc. ,Iprospec.
 
-  ### How to get number 1 in Google?
+### How to get number 1 in Google?
 
   * Use paid search:Pay enough for a click, Google, Yahoo!
 
 
 
-
-
-  ### Long Tailed Keywords can be valueable
+### Long Tailed Keywords can be valueable
 
   * Long-tail keywords are search queries made up of three-four word phrases that are very specific to a product, good, or service that’s being sold. 
 
   *  The conversion rate for long-tail keywords is approximately 2.5 times higher  than it is for head (shorter) keywords.
   * long-tail keywords that present less competition also offer lower cost-per-click prices since few marketers are targeting them
 
-  ### Keyword Phrase
+### Keyword Phrase
 
   * Use Key Phrases in the content on your page
 
@@ -181,7 +179,7 @@
 
   * Name directories, files and images with the same key words or phrases
 
-  ### Four types of keyword matching options can help you refine your ad targeting
+### Four types of keyword matching options can help you refine your ad targeting
 
   1.Broad Match: default option, support expanded matches, including synonyms and plurals; less targeted than exact or phrase matches
 
@@ -195,7 +193,7 @@
 
 
 
-  ###  Capabilities of  Search Engine Ad Servers
+###  Capabilities of  Search Engine Ad Servers
 
   * The typical common functionality of ad servers includes:
 
@@ -219,7 +217,7 @@
 
   * dayparting is a technique that involves increasing your bids during times when conversion rates are typically above average, and decreasing them when rates are typically below average????
 
-  ### Google AdWords  Auction Rules
+### Google AdWords  Auction Rules
 
   * Each bidder specifies (i) search terms that trigger its bid and (ii) the amount to bid for each search term. 
   * Google estimates the “click-through rate” that each bidder would have if it were listed in the first spot. 
@@ -251,6 +249,9 @@
 ### Web beacons
 
 * Web beacons are small strings of HTML code that are placed in a Web page. They are sometimes called “clear GIFs”, pixel tags, web bugs, or tracking bugs . Web beacons are most often used in conjunction with cookies
+
+### tracking pixel
+A very small (typically transparent, 1px*1px) image in the web page that permit the loading web page to be tracked by web servers.  
 
 ## 3. Knowledge-based System
 
@@ -365,6 +366,10 @@ typing quickly, keyboard adjency, inconsistent rules, ambiguous word breaking, n
 
 * Levenshtein Algorithm: DP, time--O(mn), space--O(nm), Backtrace--O(n+m)
 * Weighted Edit Distance: why? –spell correction: some letters are more likely to be mistyped than others
+* a confusion matrix is a specific table layout that allows visualization of the
+performance of an algorithm; each column of the matrix represents the instances in a
+predicted class while each row represents the instances in an actual class (or viceversa)
+the
 
 ## 6. Rich Text Snippets
 
@@ -478,7 +483,13 @@ Cosine similarity or Euclidean distance
 
    - update step: Calculate the new means to be the centroids of the observations in the new clusters.
 
-* Time Complexity: •O(iknm), m is the size of the vector, n is the number of vectors (items), k is the number of clusters, i depends upon convergence
+* Time Complexity: O(iknm), m is the size of the vector, n is the number of vectors (items), k is the number of clusters, i number of iterations, depends upon convergence
+   4 parameters that affect the computing time
+
+* criteria for determine k-mean algorithm terminates 
+	- After a fixed number of iterations
+	- When the document partition is unchanged
+	- When the centroid positions don’t change
 
 ### Hierarchical Clustering Algorithms
 * Hierarchical Agglomerative Clustering Algorithm - a Bottom Up Approach
