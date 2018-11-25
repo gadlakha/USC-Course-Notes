@@ -218,7 +218,6 @@ DoubleClick Ad Exchange is a real-time marketplace owned by Google for buying an
 
 ### What is real-time-bidding? (RTB)
 RTB is a protocol for two digital advertising companies to transact. 
-
 ### Which kinds of ads besides cost-per-click do Google offer in AdSense?
 (1) Cost per Thousand displays, CPM
 (2) Cost per Engagement, where advertisers only pay when users actively engage with ads
@@ -426,7 +425,8 @@ For initial states, D(i, 0)=i, D(0, j)=j
 * Entities in Rich Snippet Encodings: Software applications, events, people, products, videos and breadcrumb( a breadcrumb trail on a page indicates the page's position in 
   the  site hierarchy. A user can navigate all the way up in the site hierarchy, one level at a time, by starting from the last breadcrumb in the breadcrumb trail
 • for example, Books › Authors › Ann Leckie ›...
-
+* The itemprop attribute is used to label properties of a movie
+* add the itemscope element to the HTML tag that encloses information about the item, and you can specify the type of item using the itemtype attribute like this
 ## 7. Clustering
 
 ### What's Clustering?
