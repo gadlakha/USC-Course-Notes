@@ -200,9 +200,29 @@
 
   * Advertisers with accounts on Google’s Adwords can define a set of criteria for placement of their ad; typical criteria might include rules
 
-  * dayparting is a technique that involves increasing your bids during times when conversion rates are typically above average, and decreasing them when rates are typically below average????
+  * dayparting is a technique that involves increasing your bids during times when conversion rates are typically above average, and decreasing them when rates are typically below average
 
-### Google AdWords  Auction Rules
+### What model do many search engines (including Google) use for advertising?
+  pay-per-click (PPC) model
+
+### What is Adwords?
+It’s Google’s program for accepting pay-per-click ads. For every keyword phrase there is an auction where bidders agree to pay a certain amount to Google if their ad is clicked on.
+### What is AdSense?
+AdSense from Google is a service for placing Google ads on web pages.  use wordNet
+
+### What is Ad Exchange?
+An ad exchange is a technology platform that facilitates the buying and selling of media advertising inventory from multiple ad networks. 
+
+###	What is DoubleClick ad exchange?
+DoubleClick Ad Exchange is a real-time marketplace owned by Google for buying and selling advertising. DoubleClick's technology is called the Dynamic Advertising Reporting and Targeting system, or DART, 
+
+### What is real-time-bidding? (RTB)
+RTB is a protocol for two digital advertising companies to transact. 
+
+### Which kinds of ads besides cost-per-click do Google offer in AdSense?
+(1) Cost per Thousand displays, CPM
+(2) Cost per Engagement, where advertisers only pay when users actively engage with ads
+### Google AdWords Auction Rules
 
   * Each bidder specifies (i) search terms that trigger its bid and (ii) the amount to bid for each search term. 
   * Google estimates the “click-through rate” that each bidder would have if it were listed in the first spot. 
@@ -224,7 +244,7 @@
 
 * typically blogs use AdSense to monetize their site
 * AdSense Ads on Websites are Not Always Relevant
-* Adsense Content Matching Originally Based on WordNet(WordNet is a semantic lexicon for the English language)
+* Adsense Content Matching Originally Based on WordNet(WordNet is a semantic lexicon for the English language: WordNet is a semantic lexicon for the English language. It groups English words into sets of synonyms called synsets, provides short, general definitions, and records the various semantic relations between these synonym sets)
 
 ### Ad exchange
 
@@ -348,17 +368,25 @@ typing quickly, keyboard adjency, inconsistent rules, ambiguous word breaking, n
 
 - Define: An n-gram model is a type of probabilistic language model for predicting the next item in a sequence
 - two benfits for applyiny to spelling correction: simplicity and scalability. Back-off algorithm.
+ 
+### Norvig Algorithm- A Complete Spelling Correction Program
+* deletion, transposition, alteration, insertion
 
 ### Edit Distance & Levenshtein Algorithm
 
 * Edit Distance: the minimum edit distance between two strings is the minimum number of editing operations (insertion,deletion,substitution) needed to transform one into the other
 
-* Levenshtein Algorithm: DP, time--O(mn), space--O(nm), Backtrace--O(n+m)
+* Levenshtein Algorithm- For computing minimum edit distance: DP, time--O(mn), space--O(nm), Backtrace--O(n+m)
 * Weighted Edit Distance: why? –spell correction: some letters are more likely to be mistyped than others
-* a confusion matrix is a specific table layout that allows visualization of the
-performance of an algorithm; each column of the matrix represents the instances in a
-predicted class while each row represents the instances in an actual class (or viceversa)
-the
+* a confusion matrix is a specific table layout that allows visualization of the performance of an algorithm; each column of the matrix represents the instances in a
+  predicted class while each row represents the instances in an actual class (or viceversa) the
+* In Levenshtein algorithm to compute the minimum edit distance D(n, m) for two strings X and Y, what is the recursion formula?
+D(i, j)= min( D(i-1, j)+1  // for deletion 
+           D(i, j-1)+1  // for insertion
+           D(i-1, j-1)+2 // for substitution, if X[i]!=Y[j],
+           D(i-1, j-1)   // if X[i]==Y[j]
+)
+For initial states, D(i, 0)=i, D(0, j)=j
 
 ## 6. Rich Text Snippets
 
@@ -474,7 +502,7 @@ Cosine similarity or Euclidean distance
 
 * Time Complexity: O(iknm), m is the size of the vector, n is the number of vectors (items), k is the number of clusters, i number of iterations, depends upon convergence
    4 parameters that affect the computing time
-
+* this is an example of a greedy algorithm
 * criteria for determine k-mean algorithm terminates 
 	- After a fixed number of iterations
 	- When the document partition is unchanged
@@ -516,12 +544,12 @@ Ps: the Centroid of a cluster is the component-wise average of the vectors in a 
 
 ### Ways to evaluate Clustering algorithm(from best to weakest) 
 
-* Purely quantitative measures > •Ground “truth” comparison > user inspection > anecdotal
+* Purely quantitative measures > Ground “truth” comparison > user inspection > anecdotal
 
 ### Purity and Rand Index
 
 * Purity Measure - accuracy is measured by the number of correctly assigned documents divided by the total number of documents;
-* The Rand index (RI) measures the percentage of decisions that are correct. 计算还没看
+* The Rand index (RI) measures the percentage of decisions that are correct. 
 
 ## 8. Question Answering
 
@@ -601,11 +629,12 @@ Ps: the Centroid of a cluster is the component-wise average of the vectors in a 
 * Two phases: training phase(consists only of storing the feature vectors and class labels of the training samples) and classification phases(k is a user-defined constant, and an unlabeled vector (a query) is classified by assigning the label which is most frequent among the k training samples nearest to that query point.)
 * Choosing the optimal value for K is best done by first inspecting the data; generally, a large k value is more precise as it reduces the overall noise; Historically, the optimal k is between 3- 10
 * Two drawbacks: performance, distance metric
-* No feature selection and training necessary; sacles well with large number of classes; mostly, more accurate than R0cchio
+* No feature selection and training necessary; sacles well with large number of classes; mostly, more accurate than Rocchio
+* For binary choice problems choose k odd, to avoid tied votes
 
 ### Voroni Diagram
 
-* Define: A Voronoi diagram is a partitioning of a plane into regions based on distance to points in a specific subset of the plane
+* Define: A Voronoi diagram is a partitioning of a plane into regions based on distance to points in a specific subset of the plane. 1nn
 
 
 ## 10.  Click Fraud & Legal Issue(not required)
