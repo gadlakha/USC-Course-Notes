@@ -31,14 +31,6 @@
 
 * fortunately, MapReduce solve all the problem
 
-  –Automatic parallelization of code & distribution across multiple processors
-
-  –Fault tolerance in the event of failure of one or more nodes
-
-  –I/O scheduling
-
-  –Monitoring & Status updates
-
 * When we run a multithreaded program, we don’t know what order threads run in, nor do we know when they will interrupt one another. Therefore, we need synchronization.
 
 ### Typical MapReduce Cluster Architecture
@@ -73,7 +65,7 @@
 
   -machines are constantly pinged
 
-### The Map/Reduce Paradigm
+### The Map/Reduce steps
 
 ​	1.A large number of records are broken into segments
 
@@ -93,10 +85,6 @@
 
    –Retry on another node
 
-   * OK for a map because it had no dependencies
-
-   * OK for reduce because map outputs are on disk
-
    – If the same task repeatedly fails, fail the job or ignore that input block
 
 2. If a node crashes:
@@ -104,8 +92,6 @@
    –Relaunch its current tasks on other nodes
 
    –Relaunch any maps the node previously ran
-
-   * Necessary because their output files were lost along with the crashed node
 
 3. If a task is going slowly (straggler):
 
@@ -192,7 +178,6 @@
   message
 
 
-
 ###  Capabilities of  Search Engine Ad Servers
 
   * The typical common functionality of ad servers includes:
@@ -251,7 +236,11 @@
 * Web beacons are small strings of HTML code that are placed in a Web page. They are sometimes called “clear GIFs”, pixel tags, web bugs, or tracking bugs . Web beacons are most often used in conjunction with cookies
 
 ### tracking pixel
-A very small (typically transparent, 1px*1px) image in the web page that permit the loading web page to be tracked by web servers.  
+* A very small (typically transparent, 1px*1px) image in the web page that permit the loading web page to be tracked by web servers.  
+
+
+### click through rate
+*  the ratio of users who click on a specific link to the number of total users who view a page, email, or advertisement.
 
 ## 3. Knowledge-based System
 
@@ -560,9 +549,9 @@ Ps: the Centroid of a cluster is the component-wise average of the vectors in a 
 5. The proximity of the keywords from the original query to each other. 
 6. The N-gram overlap between the passage and the question;
 
-### Ranking candidate answers approach
+### Ranking candidate answers approaches
 
-* Part-of-Speech Tagging , Parsing,  Named Entity Extraction, Determining Semantic Relations •Dictionaries
+* Part-of-Speech Tagging , Parsing,  Named Entity Extraction, Determining Semantic Relations, Dictionaries
 
 ### Microsoft AskMSR
 
@@ -603,7 +592,6 @@ Ps: the Centroid of a cluster is the component-wise average of the vectors in a 
 - Classification Rule: Given a new document, take its vector representation and determine the nearest centroid
 - Note: This method does not guarantee that classifications are consistent with the given training data
 - Boundaries in  Rocchio Classification are Hyperplanes: divide any line, any plane, any higher dimensional spaces
-- 具体算法没看
 
 ### kNN- k Nearest Neighbor Method ～ second classfication algorithm
 
@@ -618,11 +606,9 @@ Ps: the Centroid of a cluster is the component-wise average of the vectors in a 
 ### Voroni Diagram
 
 * Define: A Voronoi diagram is a partitioning of a plane into regions based on distance to points in a specific subset of the plane
-* 和knn联系没太看懂
 
 
-
-## 10.  Click Fraud & Legal Issue
+## 10.  Click Fraud & Legal Issue(not required)
 
 ### Two basic problems with pay-per-click model
 
