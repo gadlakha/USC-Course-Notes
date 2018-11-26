@@ -648,3 +648,5 @@ Ps: the Centroid of a cluster is the component-wise average of the vectors in a 
 * What is Lucene? High performance, scalable, full-text search library;Lucene Internals - Positional Inverted Index
 * Lucene does NOT include crawlers or explicit searching of documents; – Searching the index must be implemented elsewhere; 100% Java, no dependencies; Offered by the Apache Software Foundation
 * Query Types Supported by Solr: Single and multi-term queries, Boost queries,, Range queries on date,Proximity Search
+* What is Static Quality Scores Heuristic?
+We want top-ranking documents to be both relevant and authoritative. Relevance is being modeled by cosine scores. Authority is typically a query-independent property of a document, and we may assign to each document a query-independent quality score in [0,1] to each document d. Denote this by g(d), g stands for goodness.
