@@ -641,54 +641,10 @@ Ps: the Centroid of a cluster is the component-wise average of the vectors in a 
 
 * Define: A Voronoi diagram is a partitioning of a plane into regions based on distance to points in a specific subset of the plane. 1nn
 
-
-## 10.  Click Fraud & Legal Issue(not required)
-
-### Two basic problems with pay-per-click model
-
-* Good click-through rates(CTRs) are still not indicative of good conversion rate
-* not offer any "built-in" fundamental protection mechanism against click fraud
-
-### Definition of Invalid Clicks
-
-Click Fraud occurs in pay-per-click online advertising when a person, automated script or computer program imitates a
-legitimate user of a web browser clicking on an ad, for the purpose of generating an improper charge per click
-
-Ps: Google utiliize 4 layers of click fraud detection,which can be divided into Filters, Offline analysis and investigations 
-
-### Anomalous Behavior to indicate Click Fradu
-
-* Keyword performace
-* Abnormal number of clicks from the same IP address
-* Decline in the number of conversions 
-* Large numbers of visitors who leave your site quickly 
-
-### Botnets
-
-* Define: A botnet is a large collection of well-connected compromised machines, that interact to take part in some distributed task
-
-* Botnets attacks: Distributed Denial of Service (DDoS), Information Leakage, Click Fraud , Identity Fraud
-
-### Tuzhilin
-
-* Fundamental problem: There is no conceptual definition of invalid clicks that can be operationalized 
-
-* Confusion matrix
-
-  |              |         | Click classified by filters as |                     |
-  | ------------ | ------- | ------------------------------ | ------------------- |
-  |              |         | Invalid                        | Valid               |
-  | Actual Click | Invalid | True Positive (TP)             | False Negative (FN) |
-  |              | Valid   | False Positive (FP)            | True Negative (TN)  |
-
-Note that TP + TN + FP + FN = N. 
-
-and the accuracy rate of a filter is equal to (TP + TN)/N 
-
-and the error rate to  (FP + FN)/N. 
-
-### Intellectual Property
-
-* Categories: copyright(Books, maps, paintings, web page, charts), patents, trademarks, trade secrets
-* Trademark: •A trademark is a word, words, phrase, symbol or design that is legally registered as representing a company or product. 
-* A trade secret is a formula, practice, process, design, instrument, pattern, or compilation of information which is not generally known or reasonably ascertainable, by which a business can obtain an economic advantage over competitors or customers. 
+## 10. Ps
+* Cloud computing is Internet-based computing, whereby shared resources, software and information are provided to computers and other devices ondemand, like the electricity grid.
+* A hypervisor or virtual machine monitor (VMM) is computer software, firmware or hardware that creates and runs virtual machines
+* What is Solr ? A full text search server based on Lucene
+* What is Lucene? High performance, scalable, full-text search library;Lucene Internals - Positional Inverted Index
+* Lucene does NOT include crawlers or explicit searching of documents; – Searching the index must be implemented elsewhere; 100% Java, no dependencies; Offered by the Apache Software Foundation
+* Query Types Supported by Solr: Single and multi-term queries, Boost queries,, Range queries on date,Proximity Search
