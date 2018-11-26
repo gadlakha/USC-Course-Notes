@@ -577,6 +577,11 @@ Ps: the Centroid of a cluster is the component-wise average of the vectors in a 
 5. The proximity of the keywords from the original query to each other. 
 6. The N-gram overlap between the passage and the question;
 
+### Passage ordering is performed using a sort that involves three scores:
+1. The number of words from the question that are recognized in the same sequence in the window
+2. The number of words that separate the most distant keywords in the window
+3. The number of unmatched keywords in the window
+
 ### Ranking candidate answers approaches
 
 * Part-of-Speech Tagging , Parsing,  Named Entity Extraction, Determining Semantic Relations, Dictionaries
