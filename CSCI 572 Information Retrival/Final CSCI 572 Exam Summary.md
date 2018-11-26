@@ -422,9 +422,8 @@ For initial states, D(i, 0)=i, D(0, j)=j
   - Webmasters: Provides webmasters the ability to add useful information to their web search result snippets to help Google make sense of their bits.
   - Purpose Provides more information to a user about the content that exists on page so they can decide which result is more relevant for their query. 
 * Google, Yahoo, and Bing agree on a single standard of rich snippet  on microdata format
-* Entities in Rich Snippet Encodings: Software applications, events, people, products, videos and breadcrumb( a breadcrumb trail on a page indicates the page's position in 
-  the  site hierarchy. A user can navigate all the way up in the site hierarchy, one level at a time, by starting from the last breadcrumb in the breadcrumb trail
-• for example, Books › Authors › Ann Leckie ›...
+* Entities in Rich Snippet Encodings: Software applications, events, people, products, videos and breadcrumb( 
+  - a breadcrumb trail on a page indicates the page's position in the  site hierarchy. A user can navigate all the way up in the site hierarchy, one level at a time, by starting from the last breadcrumb in the breadcrumb trail)
 * The itemprop attribute is used to label properties of a movie
 * add the itemscope element to the HTML tag that encloses information about the item, and you can specify the type of item using the itemtype attribute like this
 ## 7. Clustering
@@ -620,6 +619,7 @@ Ps: the Centroid of a cluster is the component-wise average of the vectors in a 
 
 - Rocchio is limited to determining two classes: relevant and non-relevant documents
 - Assign d to class c iff |u(c) - v(d)| < |u(c) - v(d)|  - b, assign d to class c iff the distance from d to c is less than the distance  to all other centroids, even including a small factor b 
+
 - The centroid is the center of mass (or vector average) of a set of points.The centroid may not correspond to a document in your set.
 - Rocchio chooses the centroid as the representative for each class 
 - Classification Rule: Given a new document, take its vector representation and determine the nearest centroid
@@ -631,7 +631,8 @@ Ps: the Centroid of a cluster is the component-wise average of the vectors in a 
 * Distance function measurements: Euclidean(commonly used), Manhattan, Minkowski
 * Other names: Case-based learning ,Memory-based learning, Lazy learning
 * Non-learning step, just store the labeled training examples
-* Two phases: training phase(consists only of storing the feature vectors and class labels of the training samples) and classification phases(k is a user-defined constant, and an unlabeled vector (a query) is classified by assigning the label which is most frequent among the k training samples nearest to that query point.)
+* Two phases: training phase(consists only of storing the feature vectors and class labels of the training samples) 
+  and classification phases(k is a user-defined constant, and an unlabeled vector (a query) is classified by assigning the label which is most frequent among the k training samples nearest to that query point.)
 * Choosing the optimal value for K is best done by first inspecting the data; generally, a large k value is more precise as it reduces the overall noise; Historically, the optimal k is between 3- 10
 * Two drawbacks: performance, distance metric
 * No feature selection and training necessary; sacles well with large number of classes; mostly, more accurate than Rocchio
