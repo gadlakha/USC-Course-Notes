@@ -1,10 +1,10 @@
 
+<!-- TOC -->- [1. Final CSCI 572 Exam Summary](#1-final-csci-572-exam-summary)    - [1.1. Map/Reduce](#11-mapreduce)        - [1.1.1. Basic Concept:](#111-basic-concept)        - [1.1.2. Hadoop](#112-hadoop)        - [1.1.3. Parallelization is hard](#113-parallelization-is-hard)        - [1.1.4. Typical MapReduce Cluster Architecture](#114-typical-mapreduce-cluster-architecture)        - [1.1.5. Distributed File System](#115-distributed-file-system)        - [1.1.6. The Map/Reduce steps](#116-the-mapreduce-steps)        - [1.1.7. Fault Tolerance  in MapReduce](#117-fault-tolerance--in-mapreduce)        - [1.1.8. Coping with Node Failure](#118-coping-with-node-failure)    - [1.2. The Search Engine Business Model Advertising](#12-the-search-engine-business-model-advertising)        - [1.2.1. Types of Online advertising](#121-types-of-online-advertising)        - [1.2.2. Search Engine Optimization](#122-search-engine-optimization)        - [1.2.3. How to get number 1 in Google?](#123-how-to-get-number-1-in-google)        - [1.2.4. Long Tailed Keywords can be valueable](#124-long-tailed-keywords-can-be-valueable)        - [1.2.5. Keyword Phrase](#125-keyword-phrase)        - [1.2.6. Four types of keyword matching options can help you refine your ad targeting](#126-four-types-of-keyword-matching-options-can-help-you-refine-your-ad-targeting)        - [1.2.7. Capabilities of  Search Engine Ad Servers](#127-capabilities-of--search-engine-ad-servers)        - [1.2.8. What model do many search engines (including Google) use for advertising?](#128-what-model-do-many-search-engines-including-google-use-for-advertising)        - [1.2.9. What is Adwords?](#129-what-is-adwords)        - [1.2.10. What is AdSense?](#1210-what-is-adsense)        - [1.2.11. What is Ad Exchange?](#1211-what-is-ad-exchange)        - [1.2.12. What is DoubleClick ad exchange?](#1212-what-is-doubleclick-ad-exchange)        - [1.2.13. What is real-time-bidding? (RTB)](#1213-what-is-real-time-bidding-rtb)        - [1.2.14. Which kinds of ads besides cost-per-click do Google offer in AdSense?](#1214-which-kinds-of-ads-besides-cost-per-click-do-google-offer-in-adsense)        - [1.2.15. Google AdWords Auction Rules](#1215-google-adwords-auction-rules)        - [1.2.16. Probability of the Ad Being Clicked can depend upon:](#1216-probability-of-the-ad-being-clicked-can-depend-upon)        - [1.2.17. AdSense](#1217-adsense)        - [1.2.18. Ad exchange](#1218-ad-exchange)        - [1.2.19. Web beacons](#1219-web-beacons)        - [1.2.20. tracking pixel](#1220-tracking-pixel)        - [1.2.21. click through rate](#1221-click-through-rate)    - [1.3. Knowledge-based System](#13-knowledge-based-system)        - [1.3.1. Knowledge bases](#131-knowledge-bases)        - [1.3.2. Inference engine](#132-inference-engine)        - [1.3.3. Knowledge Graph Enhances Google Search in 3 main ways](#133-knowledge-graph-enhances-google-search-in-3-main-ways)        - [1.3.4. Wikipedia’s Five Pillars](#134-wikipedias-five-pillars)    - [1.4. Query Processing](#14-query-processing)        - [1.4.1. Search engine's task](#141-search-engines-task)        - [1.4.2. Speeding up indexed Retrieval](#142-speeding-up-indexed-retrieval)        - [1.4.3. Net Score](#143-net-score)        - [1.4.4. Ranking factors category](#144-ranking-factors-category)    - [1.5. Spell Checking and Correction](#15-spell-checking-and-correction)        - [1.5.1. Twp Main Spelling Tasks](#151-twp-main-spelling-tasks)        - [1.5.2. Three types of Spelling errors](#152-three-types-of-spelling-errors)        - [1.5.3. Casues of Misspeelings](#153-casues-of-misspeelings)        - [1.5.4. Noisy Channel Model](#154-noisy-channel-model)        - [1.5.5. Error Test Sets](#155-error-test-sets)        - [1.5.6. n-gram model](#156-n-gram-model)        - [1.5.7. Norvig Algorithm- A Complete Spelling Correction Program](#157-norvig-algorithm--a-complete-spelling-correction-program)        - [1.5.8. Edit Distance & Levenshtein Algorithm](#158-edit-distance--levenshtein-algorithm)    - [1.6. Rich Text Snippets](#16-rich-text-snippets)        - [1.6.1. Snippet](#161-snippet)        - [1.6.2. Snippets are an Instance of Summarization](#162-snippets-are-an-instance-of-summarization)        - [1.6.3. Featured Snippets](#163-featured-snippets)        - [1.6.4. PAA(People Also Ask)](#164-paapeople-also-ask)        - [1.6.5. Rich Snippet](#165-rich-snippet)    - [1.7. Clustering](#17-clustering)        - [1.7.1. What's Clustering?](#171-whats-clustering)        - [1.7.2. Reason for Search Engines cluster documents](#172-reason-for-search-engines-cluster-documents)        - [1.7.3. What is a Good clustering?](#173-what-is-a-good-clustering)        - [1.7.4. Three Criteria of Adequacy for clustering methods](#174-three-criteria-of-adequacy-for-clustering-methods)        - [1.7.5. Classification VS Clustering](#175-classification-vs-clustering)        - [1.7.6. Hard vs Soft Clustering](#176-hard-vs-soft-clustering)        - [1.7.7. What definition of Similarity/Distance Will Be Used](#177-what-definition-of-similaritydistance-will-be-used)        - [1.7.8. Clustering Algorithms](#178-clustering-algorithms)        - [1.7.9. K-Means  Clustering Algorithm](#179-k-means--clustering-algorithm)        - [1.7.10. Hierarchical Clustering Algorithms](#1710-hierarchical-clustering-algorithms)        - [1.7.11. The methods to compute the distance between two clusters](#1711-the-methods-to-compute-the-distance-between-two-clusters)        - [1.7.12. Dendrogram](#1712-dendrogram)        - [1.7.13. Two ways to label clusters](#1713-two-ways-to-label-clusters)        - [1.7.14. Ways to evaluate Clustering algorithm(from best to weakest)](#1714-ways-to-evaluate-clustering-algorithmfrom-best-to-weakest)        - [1.7.15. Purity and Rand Index](#1715-purity-and-rand-index)    - [1.8. Question Answering](#18-question-answering)        - [1.8.1. What is that?](#181-what-is-that)        - [1.8.2. Some prouducts designed for QA](#182-some-prouducts-designed-for-qa)        - [1.8.3. Main phases for QA](#183-main-phases-for-qa)        - [1.8.4. Ranking Retrieved Passages 6 criteria](#184-ranking-retrieved-passages-6-criteria)        - [1.8.5. Passage ordering is performed using a sort that involves three scores:](#185-passage-ordering-is-performed-using-a-sort-that-involves-three-scores)        - [1.8.6. Ranking candidate answers approaches](#186-ranking-candidate-answers-approaches)        - [1.8.7. Microsoft AskMSR](#187-microsoft-askmsr)        - [1.8.8. Mean Reciprocal Rank(MMR)-- judge the quality of answers](#188-mean-reciprocal-rankmmr---judge-the-quality-of-answers)    - [1.9. Classfication](#19-classfication)        - [1.9.1. Classfication Methods](#191-classfication-methods)        - [1.9.2. Relevance Feedback](#192-relevance-feedback)        - [1.9.3. Rocchio Method is used for Relevance feedback](#193-rocchio-method-is-used-for-relevance-feedback)        - [1.9.4. kNN- k Nearest Neighbor Method ～ second classfication algorithm](#194-knn--k-nearest-neighbor-method--second-classfication-algorithm)        - [1.9.5. Voroni Diagram](#195-voroni-diagram)    - [1.10. Ps](#110-ps)<!-- /TOC -->
+# 1. Final CSCI 572 Exam Summary
 
-# Final CSCI 572 Exam Summary
+## 1.1. Map/Reduce
 
-## 1. Map/Reduce
-
-### Basic Concept:
+### 1.1.1. Basic Concept:
 
 * MapReduce is a methodology for exploiting parallelism in computing clouds (racks of interconnected processors)
 
@@ -14,12 +14,12 @@
 
 
 
-### Hadoop
+### 1.1.2. Hadoop
 
 * Apache Hadoop is an open-source implementation of map/reduce written in Java for distributed storage and distributed processing of very large data sets on computer clusters built from commodity hardware.  
 * The core of Apache Hadoop consists of a storage part, known as Hadoop Distributed File System (HDFS), and a processing part called MapReduce. 
 
-### Parallelization is hard
+### 1.1.3. Parallelization is hard
 
 *  How to assign work units to worker threads
 
@@ -33,7 +33,7 @@
 
 * When we run a multithreaded program, we don’t know what order threads run in, nor do we know when they will interrupt one another. Therefore, we need synchronization.
 
-### Typical MapReduce Cluster Architecture
+### 1.1.4. Typical MapReduce Cluster Architecture
 
 * Each rack of cpu’s contains between 16-64 nodes
 
@@ -43,7 +43,7 @@
 
 * Individual cpu’s can fail; switches between racks can fail
 
-### Distributed File System
+### 1.1.5. Distributed File System
 
 * cluster computing is defined as a collection of compute nodes stored on racks with racks connected by switches
 
@@ -65,7 +65,7 @@
 
   -machines are constantly pinged
 
-### The Map/Reduce steps
+### 1.1.6. The Map/Reduce steps
 
 ​	1.A large number of records are broken into segments
 
@@ -79,7 +79,7 @@
 
 **Key idea:** to re-phrase problems in such a way that the input can be divided into parts and operated on in parallel and the results combined to produce  a solution to the original problem
 
-### Fault Tolerance  in MapReduce
+### 1.1.7. Fault Tolerance  in MapReduce
 
 1. If a task crashes:
 
@@ -99,7 +99,7 @@
 
    –Take the output of whichever copy finishes first, and kill the other one
 
-### Coping with Node Failure
+### 1.1.8. Coping with Node Failure
 
 * Worst case: the compute node where the Master is executing fails
 
@@ -119,8 +119,8 @@
 
   –The Master sets the status of its currently executing Reduce tasks to idle and they will be re-scheduled on another reduce worker later
 
-## 2. The Search Engine Business Model Advertising
-### Types of Online advertising
+## 1.2. The Search Engine Business Model Advertising
+### 1.2.1. Types of Online advertising
 
 * Banner advertising
 * Pay-per-click Advertising
@@ -130,7 +130,7 @@
 
 
 
-### Search Engine Optimization
+### 1.2.2. Search Engine Optimization
 
 * Search Engine Optimizers focus is to develop and refine a company’s online presence; 
 
@@ -144,20 +144,20 @@
 
 * There are many companies who claim to do SEO: Boostability, Icrossing,Inc. ,Iprospec.
 
-### How to get number 1 in Google?
+### 1.2.3. How to get number 1 in Google?
 
   * Use paid search:Pay enough for a click, Google, Yahoo!
 
 
 
-### Long Tailed Keywords can be valueable
+### 1.2.4. Long Tailed Keywords can be valueable
 
   * Long-tail keywords are search queries made up of three-four word phrases that are very specific to a product, good, or service that’s being sold. 
 
   *  The conversion rate for long-tail keywords is approximately 2.5 times higher  than it is for head (shorter) keywords.
   * long-tail keywords that present less competition also offer lower cost-per-click prices since few marketers are targeting them
 
-### Keyword Phrase
+### 1.2.5. Keyword Phrase
 
   * Use Key Phrases in the content on your page
 
@@ -165,7 +165,7 @@
 
   * Name directories, files and images with the same key words or phrases
 
-### Four types of keyword matching options can help you refine your ad targeting
+### 1.2.6. Four types of keyword matching options can help you refine your ad targeting
 
   1.Broad Match: default option, support expanded matches, including synonyms and plurals; less targeted than exact or phrase matches
 
@@ -178,7 +178,7 @@
   message
 
 
-###  Capabilities of  Search Engine Ad Servers
+### 1.2.7. Capabilities of  Search Engine Ad Servers
 
   * The typical common functionality of ad servers includes:
 
@@ -202,32 +202,32 @@
 
   * dayparting is a technique that involves increasing your bids during times when conversion rates are typically above average, and decreasing them when rates are typically below average
 
-### What model do many search engines (including Google) use for advertising?
+### 1.2.8. What model do many search engines (including Google) use for advertising?
   pay-per-click (PPC) model
 
-### What is Adwords?
+### 1.2.9. What is Adwords?
 It’s Google’s program for accepting pay-per-click ads. For every keyword phrase there is an auction where bidders agree to pay a certain amount to Google if their ad is clicked on.
-### What is AdSense?
+### 1.2.10. What is AdSense?
 AdSense from Google is a service for placing Google ads on web pages.  use wordNet
 
-### What is Ad Exchange?
+### 1.2.11. What is Ad Exchange?
 An ad exchange is a technology platform that facilitates the buying and selling of media advertising inventory from multiple ad networks. 
 
-###	What is DoubleClick ad exchange?
+### 1.2.12. What is DoubleClick ad exchange?
 DoubleClick Ad Exchange is a real-time marketplace owned by Google for buying and selling advertising. DoubleClick's technology is called the Dynamic Advertising Reporting and Targeting system, or DART, 
 
-### What is real-time-bidding? (RTB)
+### 1.2.13. What is real-time-bidding? (RTB)
 RTB is a protocol for two digital advertising companies to transact. 
-### Which kinds of ads besides cost-per-click do Google offer in AdSense?
+### 1.2.14. Which kinds of ads besides cost-per-click do Google offer in AdSense?
 (1) Cost per Thousand displays, CPM
 (2) Cost per Engagement, where advertisers only pay when users actively engage with ads
-### Google AdWords Auction Rules
+### 1.2.15. Google AdWords Auction Rules
 
   * Each bidder specifies (i) search terms that trigger its bid and (ii) the amount to bid for each search term. 
   * Google estimates the “click-through rate” that each bidder would have if it were listed in the first spot. 
   * Google is paid only when an ad gets clicked. 
 
-### Probability of the Ad Being Clicked can depend upon:
+### 1.2.16. Probability of the Ad Being Clicked can depend upon:
 
 * Historical click performance of the ad
 
@@ -237,7 +237,7 @@ RTB is a protocol for two digital advertising companies to transact.
 
 * User click through rates
 
-### AdSense 
+### 1.2.17. AdSense 
 
 * is a service for placing Google ads on third party web pages 
 
@@ -245,25 +245,25 @@ RTB is a protocol for two digital advertising companies to transact.
 * AdSense Ads on Websites are Not Always Relevant
 * Adsense Content Matching Originally Based on WordNet(WordNet is a semantic lexicon for the English language: WordNet is a semantic lexicon for the English language. It groups English words into sets of synonyms called synsets, provides short, general definitions, and records the various semantic relations between these synonym sets)
 
-### Ad exchange
+### 1.2.18. Ad exchange
 
 * An ad exchange is a technology platform that facilitates the buying and selling of media advertising inventory from
   multiple ad networks.
 
-### Web beacons
+### 1.2.19. Web beacons
 
 * Web beacons are small strings of HTML code that are placed in a Web page. They are sometimes called “clear GIFs”, pixel tags, web bugs, or tracking bugs . Web beacons are most often used in conjunction with cookies
 
-### tracking pixel
+### 1.2.20. tracking pixel
 * A very small (typically transparent, 1px*1px) image in the web page that permit the loading web page to be tracked by web servers.  
 
 
-### click through rate
+### 1.2.21. click through rate
 *  the ratio of users who click on a specific link to the number of total users who view a page, email, or advertisement.
 
-## 3. Knowledge-based System
+## 1.3. Knowledge-based System
 
-### Knowledge bases
+### 1.3.1. Knowledge bases
 
 * A knowledgebase (KB) is a technology used to store complex structured and unstructured information used by a computer system. 
 
@@ -279,7 +279,7 @@ RTB is a protocol for two digital advertising companies to transact.
 * KnowledgeBases are Labeled MultiGraphs(is a graph which is permitted to have multiple edges that have the same end nodes. Two vertices may be connected by more than one edge)
 * different notations: 1. RDF(resources description format, including subject, predicate and object) 2. logical notation
 
-### Inference engine
+### 1.3.2. Inference engine
 
 * Define: •An inference engine is a component of a system that applies logical rules to a knowledgebase to deduce new information 
 
@@ -291,19 +291,19 @@ RTB is a protocol for two digital advertising companies to transact.
 
 * An inference engine cycles through three sequential steps: match rules, select rules, and execute rules
 
-### Knowledge Graph Enhances Google Search in 3 main ways 
+### 1.3.3. Knowledge Graph Enhances Google Search in 3 main ways 
 
 * To improve the variety of search results
 * To provide deeper and broader results
 * To provide the best summary
 
-### Wikipedia’s Five Pillars 
+### 1.3.4. Wikipedia’s Five Pillars 
 
 1.Encyclopaedia  2.Neutral point of view (NPOV) 3.Free content 4.Be civil 5.No firm rules
 
-## 4. Query Processing
+## 1.4. Query Processing
 
-### Search engine's task
+### 1.4.1. Search engine's task
 
 1. minimally return documents that contain the query terms
 
@@ -312,7 +312,7 @@ RTB is a protocol for two digital advertising companies to transact.
 
 2. determene waht the users is actually trying to accomplish
 
-### Speeding up indexed Retrieval
+### 1.4.2. Speeding up indexed Retrieval
 
 for process 1:
 
@@ -323,22 +323,22 @@ for process 1:
 * Reorganize the Inverted List:order all postings by g(d) the authority measure
 * High and Low Lists Heuristic-•For each term, we maintain two postings lists called high and low
 
-### Net Score
+### 1.4.3. Net Score
 
 * Define: a simple total score combining cosine relevance and authority
 * Net-score(q,d) = g(d) + consine(q, d)-----–For query q and document d its net-score is a combination of relevance and authority
 
-### Ranking factors category
+### 1.4.4. Ranking factors category
 
 1.Content factors(relevant terms, keyword in internal links)    2.User signals(click through rate, time on site)    3.Technical factors(domain visibility, .com sites are favored)   4.User experience  5.Social signals
 
-## 5. Spell Checking and Correction
+## 1.5. Spell Checking and Correction
 
-### Twp Main Spelling Tasks
+### 1.5.1. Twp Main Spelling Tasks
 
 1. Spelling Error Dection  2. Spelling Error Correction
 
-### Three types of Spelling errors
+### 1.5.2. Three types of Spelling errors
 
 1. Non-word errors  : the larger the dicitionary the better
 
@@ -351,27 +351,27 @@ for process 1:
 
 3. congitive error(sounds alike).   Sounded algorithm
 
-### Casues of Misspeelings
+### 1.5.3. Casues of Misspeelings
 
 typing quickly, keyboard adjency, inconsistent rules, ambiguous word breaking, new words
 
-### Noisy Channel Model
+### 1.5.4. Noisy Channel Model
 
 * This model suggests treating the misspelled word as if a correctly spelled word has been distorted by being passed through a noisy communication channel; Noise in this case refers to substitutions, insertions or deletions of letters  
 
-### Error Test Sets 
+### 1.5.5. Error Test Sets 
 
 –Wikipedia’s list of common English misspelling; –Aspell filtered version of that list; –Birkbeck spelling error corpus
 
-### n-gram model
+### 1.5.6. n-gram model
 
 - Define: An n-gram model is a type of probabilistic language model for predicting the next item in a sequence
 - two benfits for applyiny to spelling correction: simplicity and scalability. Back-off algorithm.
  
-### Norvig Algorithm- A Complete Spelling Correction Program
+### 1.5.7. Norvig Algorithm- A Complete Spelling Correction Program
 * deletion, transposition, alteration, insertion
 
-### Edit Distance & Levenshtein Algorithm
+### 1.5.8. Edit Distance & Levenshtein Algorithm
 
 * Edit Distance: the minimum edit distance between two strings is the minimum number of editing operations (insertion,deletion,substitution) needed to transform one into the other
 
@@ -387,11 +387,11 @@ D(i, j)= min( D(i-1, j)+1  // for deletion
 )
 For initial states, D(i, 0)=i, D(0, j)=j
 
-## 6. Rich Text Snippets
+## 1.6. Rich Text Snippets
 
-### Snippet
+### 1.6.1. Snippet
 
-* Google introduced Snippet, a short description of, or excerpt from, a website which appears in Google search results. Snippets are created automatically based on the site's content and the query terms  
+* Google introduced Snippet, a short description of, or excerpt from, a website which appears in Google search results. Snippets are created matically based on the site's content and the query terms  
 * Snippets are computed at query time
 * Snippets Can Vary for a Single Site Depending Upon the Query
 * if the snippet begins with ellipses (. . . . ) that indicates the snippet was excerpted from a larger body of text and text preceding the ellipses was omitted
@@ -399,23 +399,23 @@ For initial states, D(i, 0)=i, D(0, j)=j
 * the maximum length of a snippet is 156 characters
 * Google uses the meta description (if there is one) as the default for a snippet if there is an Open Directory Project listing for a website, Google uses its meta description over the meta description in the web page
 
-### Snippets are an Instance of Summarization
+### 1.6.2. Snippets are an Instance of Summarization
 
-* Two general approaches to automatic summarization:
+* Two general approaches to matic summarization:
 
   •[extraction](https://en.wiktionary.org/wiki/Extraction)  Extractive methods work by selecting a subset of existing words, phrases, or sentences in the original text to form the summary
 
   •[abstraction](https://en.wikipedia.org/wiki/Abstract_(summary)) abstractive methods build an internal semantic representation and then use natural language generation techniques to create a summary that is closer to what a human might express 
 
-### Featured Snippets
+### 1.6.3. Featured Snippets
 
 * Three types: 1.Paragraph featured snippet. 2.List featured snippet. 3.Table featured snippet
 
-### PAA(People Also Ask)
+### 1.6.4. PAA(People Also Ask)
 
 * The “People Also Ask” box is a Google universal Search Result Page result that answers questions related to the searcher’s initial query. 
 
-### Rich Snippet
+### 1.6.5. Rich Snippet
 
 * Define: A rich snippet shows extra information between the URL and the description. 
 * Advantages of Rich Snippets
@@ -426,25 +426,25 @@ For initial states, D(i, 0)=i, D(0, j)=j
   - a breadcrumb trail on a page indicates the page's position in the  site hierarchy. A user can navigate all the way up in the site hierarchy, one level at a time, by starting from the last breadcrumb in the breadcrumb trail)
 * The itemprop attribute is used to label properties of a movie
 * add the itemscope element to the HTML tag that encloses information about the item, and you can specify the type of item using the itemtype attribute like this
-## 7. Clustering
+## 1.7. Clustering
 
-### What's Clustering?
+### 1.7.1. What's Clustering?
 
 * Clustering: the process of grouping a set of objects into classes of similar objects
 * Clustering is the most common form of unsupervised learning(learning from raw data, as opposed to supervised learning where a classification of examples is given)
 
-### Reason for Search Engines cluster documents
+### 1.7.2. Reason for Search Engines cluster documents
 
 * For improving recall in search applications
 * For speeding up vector space retrieval
 * Cleaner user interface
-* Automatic thesaurus generation by clustering related terms 
+* matic thesaurus generation by clustering related terms 
 
   Ps: Yippy.com emphsizes clusters of results;  
 
 ​       Yahoo! Hierarchy isn’t clustering but is the kind of output you want from clustering 
 
-### What is a Good clustering?
+### 1.7.3. What is a Good clustering?
 
 * Internal criteria : A good clustering will produce high quality clusters in which:
 
@@ -452,13 +452,13 @@ For initial states, D(i, 0)=i, D(0, j)=j
 
    –the inter-class similarity is low
 
-### Three Criteria of Adequacy for clustering methods
+### 1.7.4. Three Criteria of Adequacy for clustering methods
 
 * produced clustering is stable even under significant growth
 * The method is stable in the sense that small errors in the description of objects lead to small changes in the clustering
 * The method is independent of the initial ordering of the objects
 
-### Classification VS Clustering
+### 1.7.5. Classification VS Clustering
 
 * Classification is supervised learning( given a set of predefined classes and want to know which class a new object belongs to) and clustering is unsupervised learning(tries to group a set of objects and find whether there is some relationship between the objects)
 
@@ -466,21 +466,21 @@ For initial states, D(i, 0)=i, D(0, j)=j
 
   –classification has each document labeled in a class and an algorithm that assigns new documents to one of the classes
 
-### Hard vs Soft Clustering
+### 1.7.6. Hard vs Soft Clustering
 
 * Hard clustering: Each document belongs to exactly one cluster
 * Soft clustering: A document can belong to more than one cluster
 
-### What definition of Similarity/Distance Will Be Used
+### 1.7.7. What definition of Similarity/Distance Will Be Used
 
 Cosine similarity or Euclidean distance
 
-### Clustering Algorithms
+### 1.7.8. Clustering Algorithms
 
 * Partitioning Based Algorithms: divide a set of N items into K clusters (top-down)
 * Hierarchica：agglomerative and divisivel
 
-### K-Means  Clustering Algorithm
+### 1.7.9. K-Means  Clustering Algorithm
 
 * What is that?
 
@@ -507,7 +507,7 @@ Cosine similarity or Euclidean distance
 	- When the document partition is unchanged
 	- When the centroid positions don’t change
 
-### Hierarchical Clustering Algorithms
+### 1.7.10. Hierarchical Clustering Algorithms
 * Hierarchical Agglomerative Clustering Algorithm - a Bottom Up Approach
 
   –1. Place each of N documents into a class of its own.
@@ -520,7 +520,7 @@ Cosine similarity or Euclidean distance
 
 * Divisive Clustering Algorithm
 
-### The methods to compute the distance between two clusters
+### 1.7.11. The methods to compute the distance between two clusters
 
 Ps: the Centroid of a cluster is the component-wise average of the vectors in a cluster, which is itself a vector
 
@@ -532,43 +532,43 @@ Ps: the Centroid of a cluster is the component-wise average of the vectors in a 
 
 4.Complete Link: distance of the furthest points, the least cosine similar
 
-### Dendrogram
+### 1.7.12. Dendrogram
 
 * A dendrogram is a tree diagram frequently used to illustrate the arrangement of the clusters produced by hierarchical clustering
 
-### Two ways to label clusters
+### 1.7.13. Two ways to label clusters
 
 * Show titles of typical documents
 * show words/phrases proominent in cluster
 
-### Ways to evaluate Clustering algorithm(from best to weakest) 
+### 1.7.14. Ways to evaluate Clustering algorithm(from best to weakest) 
 
 * Purely quantitative measures > Ground “truth” comparison > user inspection > anecdotal
 
-### Purity and Rand Index
+### 1.7.15. Purity and Rand Index
 
 * Purity Measure - accuracy is measured by the number of correctly assigned documents divided by the total number of documents;
 * The Rand index (RI) measures the percentage of decisions that are correct. 
 
-## 8. Question Answering
+## 1.8. Question Answering
 
-### What is that?
+### 1.8.1. What is that?
 
-* Question Answering (QA) is concerned with building systems that automatically answer questions posed by humans in a natural language. It combines information retrieval and natural language processing.
+* Question Answering (QA) is concerned with building systems that matically answer questions posed by humans in a natural language. It combines information retrieval and natural language processing.
 * Google Approach:
   - Original approach: find the question as a string on the web, return next sentence. Improved by introducing Knowlegde graph and N-grams
 
-### Some prouducts designed for QA
+### 1.8.2. Some prouducts designed for QA
 
 * Siri, Ask.com, IBM's Watson, Google's knowledge graph
 
-### 3 Main phases for QA
+### 1.8.3. Main phases for QA
 
 1. question processing: Captures the semantics of the question. 
 2.  Passage retrieval: Extracts and ranks passages using surface-text techniques  
 3.  answer processing: Extracts and ranks answers using NL techniques
 
-### Ranking Retrieved Passages 6 criteria
+### 1.8.4. Ranking Retrieved Passages 6 criteria
 1. The number of named entities of the right type in the passage
 2. The number of question keywords in the passage
 3. The longest exact sequence of question keywords that occurs in the passage
@@ -576,16 +576,16 @@ Ps: the Centroid of a cluster is the component-wise average of the vectors in a 
 5. The proximity of the keywords from the original query to each other. 
 6. The N-gram overlap between the passage and the question;
 
-### Passage ordering is performed using a sort that involves three scores:
+### 1.8.5. Passage ordering is performed using a sort that involves three scores:
 1. The number of words from the question that are recognized in the same sequence in the window
 2. The number of words that separate the most distant keywords in the window
 3. The number of unmatched keywords in the window
 
-### Ranking candidate answers approaches
+### 1.8.6. Ranking candidate answers approaches
 
 * Part-of-Speech Tagging , Parsing,  Named Entity Extraction, Determining Semantic Relations, Dictionaries
 
-### Microsoft AskMSR
+### 1.8.7. Microsoft AskMSR
 
 * AskMSR is a question answering system developed at Microsoft, rather than doing sophisticated linguistic analyses it relies upon information scattered around the web
 
@@ -597,25 +597,25 @@ Ps: the Centroid of a cluster is the component-wise average of the vectors in a 
   4. Filtering N-Grams: match "data-type filters" of each question type
   5. Tiling the Answers: merged, discard old n-grams; repeat, utile no more overlap
 
-### Mean Reciprocal Rank(MMR)-- judge the quality of answers
+### 1.8.8. Mean Reciprocal Rank(MMR)-- judge the quality of answers
 
 * The mean reciprocal rank is a statistical measure for evaluating any process that produces a list of possible responses to a sample of queries, ordered by probability of correctness. 
 * Formulate: MMR = Sum(1/rank i) / Q
 
-## 9. Classfication
+## 1.9. Classfication
 
-### Classfication Methods
+### 1.9.1. Classfication Methods
 
 * Manual classification: Yahoo! Directory
 * Using Vector Spaces: Two premise
   - Documents in the same class form a contiguous region of space(contiguity hypothesis)
   - Documents from different classes don’t overlap (much)
 
-### Relevance Feedback
+### 1.9.2. Relevance Feedback
 
 * Define: User feedback on relevance of docs in initial set of results, which can be iterations
 
-### Rocchio Method is used for Relevance feedback
+### 1.9.3. Rocchio Method is used for Relevance feedback
 
 - Rocchio is limited to determining two classes: relevant and non-relevant documents
 - Assign d to class c iff |u(c) - v(d)| < |u(c) - v(d)|  - b, assign d to class c iff the distance from d to c is less than the distance  to all other centroids, even including a small factor b 
@@ -626,7 +626,7 @@ Ps: the Centroid of a cluster is the component-wise average of the vectors in a 
 - Note: This method does not guarantee that classifications are consistent with the given training data
 - Boundaries in  Rocchio Classification are Hyperplanes: divide any line, any plane, any higher dimensional spaces
 
-### kNN- k Nearest Neighbor Method ～ second classfication algorithm
+### 1.9.4. kNN- k Nearest Neighbor Method ～ second classfication algorithm
 
 * Distance function measurements: Euclidean(commonly used), Manhattan, Minkowski
 * Other names: Case-based learning ,Memory-based learning, Lazy learning
@@ -638,11 +638,11 @@ Ps: the Centroid of a cluster is the component-wise average of the vectors in a 
 * No feature selection and training necessary; sacles well with large number of classes; mostly, more accurate than Rocchio
 * For binary choice problems choose k odd, to avoid tied votes
 
-### Voroni Diagram
+### 1.9.5. Voroni Diagram
 
 * Define: A Voronoi diagram is a partitioning of a plane into regions based on distance to points in a specific subset of the plane. 1nn
 
-## 10. Ps
+## 1.10. Ps
 * Cloud computing is Internet-based computing, whereby shared resources, software and information are provided to computers and other devices ondemand, like the electricity grid.
 * A hypervisor or virtual machine monitor (VMM) is computer software, firmware or hardware that creates and runs virtual machines
 * What is Solr ? A full text search server based on Lucene
