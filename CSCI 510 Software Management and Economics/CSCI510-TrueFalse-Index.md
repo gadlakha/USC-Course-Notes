@@ -1,6 +1,6 @@
 # CSCI510 True/False Index
 
-## EC - 0 ICSM Principle 1
+## EC - 0 Overview ICSM Principle 1
 - Definition of ICSM, Risk-driven framework (p24)
 - Spiral Model (p25)
 - Gambling Example (p26)
@@ -150,32 +150,7 @@
 - Case Study - Final Thoughts (p30)
 - Most Importantly - Talk and Think Like a Business-Person (p31)
 
-
-## EC - 6 Software Sizing and Costing
-- COCOMO Effort Formulation
-- SLOC Pros and Cons (p4)
-- IFPUG Function Points and its pros and cons (p5, p6,p7)
-- Use case (p8, p9, p10)
-- Use case points and its pros and cons (p11, p12, p13)
-- COSMIC Function Points and its pros and cons(p14, p15, p16)
-- Story points and its pros and cons (p19, p20, p21)
-- Software Estimation Accuracy comparison 
-
-
-## EC - 7 Costing Software Security 
-- Cybersecurity, computer security, application security, software security defination (p5)
-- Software security vs application security (p6)
-- Software vulnerabilities ( connectivity, extensibility, complexity) (p7, p8, p9)
-- Secure software development (p13 - p14)
-- Costs to find and fix defect (p15)
-- Estimating software security - challenges and existing models
-- Common criteria EALs (p17 - p19)
-- COSECMO - extension for secure software development (p20 - p21)
-- MND-SCEMP (p22 - p23)
-- COCOMO III (P24 - P25)
-
-
-## EC - 8 Future Challenges for Systems and Software Cost Estimation and Measurement
+## EC - 6 Future Challenges for Systems and Software Cost Estimation and Measurement
 - Size issues and definitions (p4)
 - Equivalent SLOC (p5)
 - Incremental Development Productivity Decline (IDPD) (p10)
@@ -195,86 +170,10 @@
 - COSYSMO change impact analysis
 - COSYSMO Requirements Counting Challenge
 - Achieving Agility and High Assurance -I
-****- Evolutionary Concurrent:  Incremental Commitment Model
-- 
+****- Evolutionary Concurrent:  Incremental Commitment Model- 
 
 
-## EC - 10 Software Decision Analysis Techniques
-- topics in software decision analysis techniques (p2)
-  - e.g. Economics, Macroeconomics, Microeconomics, Software economics decisions
-- master key to software engineering economics decision analysis techniques (The UML diagram) (p4)
-- MedFRS TPS Context (p6)
-- MedFRS TPS Architecture (p7)
-- MedFRS TPS Concept of Operation (p8)
-- COTS vs. New Development Cost Tradeoff: MedFRS TPS (p9, p10, p11)
-- MedFRS TPS Decision Problem1 (p12)
-- TPS Performance, E(N) (p13)
-- TPS throughout: E(N) vs # of processors, N (p14)
-- TPS Decision Problem2 - which operating system (p15)
-- cost-effectiveness comparison (p16)
-- Production Function (p17, p18, p19)
-- Software “Gold-Plating” (p20)
-  - Modular Transaction Processing System (P21)
-- Software Project Diseconomies of Scale (p22)
-- Cost-Effectiveness Decision Criteria (P23)
-  - max available budget, min performance requirement, max effectiveness/cost ratio, ROI, Composite Alternatives (p24 - p28)
-
-
-## EC - 11 Multiple Goal Decision Analysis I
-- Marginal Analysis: Definitions (p3)
-  - Cost and Total Value (p4)
-  - Marginal Net Value (p5)
-  - Net Value vs. Activity Level (p6)
-- Marginal Net Value Decision Rule (p7)
-- Optimal Number of Processors vs. Transaction Value (p8)
-- MedFRS TPS Decision Problem 3 (p9)
-  - Interest Calculations (p10)
-  - Present Value Calculations (p11)
-  - Present Value (p12, p13, p14, p15, p16)
-- MedFRS TPS Decision Problem 4 (p17)
-  - Alternative TPS Operating system Characteristics (P18)
-  - Meta-Decision Problems (P19)
-  - Weighted Sum Figure of Merit (P20)
-  - TPS Operating System Figure of Merit Calculation (P21)
-  - Delivered System Capability (DSC) Figure of Merit (P22)
-  - The DSC Figure of Merit (P23)
-  - Gains from System A Plus - I (P24)
-  - Gains from System A Plus - II (P25)
-  - TPS Comparison: Delivered System Capability (DSC) (P26)
-  - Revised TPS Weighted Sum Analysis (P27)
-  - Comparison of Weighted Sum and DSC Figures of Merit (P28)
-
-
-## EC - 12 Multiple-Goal Decision Analysis II
-- TPS Decision Problem 5 (P2)
-  - System reliability for N processors and availability for N processors
-  - TPS Reliability, Availability, and Performance Graph (P3)
-  - TPS Delivered System Capability Graph (P4)
-- Goals as Constraints (P5, P6, P7, P8, P9)
-- Geometric View (P10)
-- The Linear Programming Problem (P11, P12)
-  - Solution Steps (P13, P14, P15)
-  - Mathematical Optimization & System Analysis
-- TPS Decision Problem 6 (p17, p18, p19)
-
-
-## EC - 13 Dealing With Uncertainties
-- TPS Decision Problem 7 (p2)
-- Operating System Development Options (p3)
-- Payoff Matrix for OS Options BB, BC (p4)
-- Decision Rules for Complete Uncertainty (p5)
-  - Maximin Rule, Maximax Rule, Laplace rule
-- Difficulty with Laplace Rule (p6)
-- Breakeven Analysis (p7)
-- Utility Functions (p8, p9, p10, p11)
-- TPS Decision Problem 7 (p12 - p17)
-- Conditions for Successful Prototyping (Or **Information Buying**) (p18)
-- **Pitfalls Associated by Success Conditions (p19)**
-  - FIVE ALWAYS (DO NOT DO THOSE)
-- Statistical Decision Theory: Other S/W Engineering Applications
-
-
-## EC - 14 Software Risk Management
+## EC - 7 Software Risk Management
 - Is This a Risk (p3, p4, p5)
 - How Can Risk Management Help You Deal With Risks? What can it help you do? (p6)
   - Buying Information(p7)
@@ -315,35 +214,83 @@
   - project Top 10 Risk Item List: Satellite Experiment Software (p46)
 
 
-## EC - 15 Estimates and Expectations
-- The Numbers (p3)
-- Systems Fail: & Continue To Do So (p4)
-- The State of IT (p5)
-- Significant Failures in 2017 (p6, p7)
-- Start with the People (p8)
-- So Many Players, layers & “languages” (p9)
-- Words Tell only 7% of the story (p10)
-- What is an Estimate? What is it NOT? (p11)
-- Moving from Estimate to Commitments (p12)
-- About the cone of Uncertainty (p13)
-- Uncertainties in Every Project (p14)
-- Sources/Causes of Estimation Errors (p15)
-- Poor Estimates Affect Projects (p16)
-  - What kind of requirements are there? Who/What Drives Them? (p17)
-- How does your customer define Success? (p18)
-- Contracts (p19)
-- Roles & Responsibilities (p20)
-- Real Litigation Example (p21, p22, p23)
-- Metrics and Measures to Manage Project Risks (p25)
-- Risks Known BEFORE Project Starts! (p26)
-- Change is Natural (p27)
-- The Solution (p28)
-- Some Industry Heuristics (p29)
-- Warren Reid’s Remedies(p30)
-- Cassie Oates: background (guest lecturer) (p31)
+
+## EC - 8 Software Decision Analysis Techniques-MedFRS Econ Analysis I 
+- topics in software decision analysis techniques (p2)
+  - e.g. Economics, Macroeconomics, Microeconomics, Software economics decisions
+- master key to software engineering economics decision analysis techniques (The UML diagram) (p4)
+- MedFRS TPS Context (p6)
+- MedFRS TPS Architecture (p7)
+- MedFRS TPS Concept of Operation (p8)
+- COTS vs. New Development Cost Tradeoff: MedFRS TPS (p9, p10, p11)
+- MedFRS TPS Decision Problem1 (p12)
+- TPS Performance, E(N) (p13)
+- TPS throughout: E(N) vs # of processors, N (p14)
+- TPS Decision Problem2 - which operating system (p15)
+- cost-effectiveness comparison (p16)
+- Production Function (p17, p18, p19)
+- Software “Gold-Plating” (p20)
+  - Modular Transaction Processing System (P21)
+- Software Project Diseconomies of Scale (p22)
+- Cost-Effectiveness Decision Criteria (P23)
+  - max available budget, min performance requirement, max effectiveness/cost ratio, ROI, Composite Alternatives (p24 - p28)
 
 
-## EC - 16 ICSM Stages and Phases
+## EC - 9 Multiple Goal Decision Analysis I --MedFRS Econ Analysis II 2020
+- Marginal Analysis: Definitions (p3)
+  - Cost and Total Value (p4)
+  - Marginal Net Value (p5)
+  - Net Value vs. Activity Level (p6)
+- Marginal Net Value Decision Rule (p7)
+- Optimal Number of Processors vs. Transaction Value (p8)
+- MedFRS TPS Decision Problem 3 (p9)
+  - Interest Calculations (p10)
+  - Present Value Calculations (p11)
+  - Present Value (p12, p13, p14, p15, p16)
+- MedFRS TPS Decision Problem 4 (p17)
+  - Alternative TPS Operating system Characteristics (P18)
+  - Meta-Decision Problems (P19)
+  - Weighted Sum Figure of Merit (P20)
+  - TPS Operating System Figure of Merit Calculation (P21)
+  - Delivered System Capability (DSC) Figure of Merit (P22)
+  - The DSC Figure of Merit (P23)
+  - Gains from System A Plus - I (P24)
+  - Gains from System A Plus - II (P25)
+  - TPS Comparison: Delivered System Capability (DSC) (P26)
+  - Revised TPS Weighted Sum Analysis (P27)
+  - Comparison of Weighted Sum and DSC Figures of Merit (P28)
+
+
+## EC - 10 Multiple-Goal Decision Analysis II ---MedFRS Econ Analysis III 2020
+- TPS Decision Problem 5 (P2)
+  - System reliability for N processors and availability for N processors
+  - TPS Reliability, Availability, and Performance Graph (P3)
+  - TPS Delivered System Capability Graph (P4)
+- Goals as Constraints (P5, P6, P7, P8, P9)
+- Geometric View (P10)
+- The Linear Programming Problem (P11, P12)
+  - Solution Steps (P13, P14, P15)
+  - Mathematical Optimization & System Analysis
+- TPS Decision Problem 6 (p17, p18, p19)
+
+
+## EC - 11 MedFRS Econ Analysis IV 2020 -Dealing With Uncertainties
+- TPS Decision Problem 7 (p2)
+- Operating System Development Options (p3)
+- Payoff Matrix for OS Options BB, BC (p4)
+- Decision Rules for Complete Uncertainty (p5)
+  - Maximin Rule, Maximax Rule, Laplace rule
+- Difficulty with Laplace Rule (p6)
+- Breakeven Analysis (p7)
+- Utility Functions (p8, p9, p10, p11)
+- TPS Decision Problem 7 (p12 - p17)
+- Conditions for Successful Prototyping (Or **Information Buying**) (p18)
+- **Pitfalls Associated by Success Conditions (p19)**
+  - FIVE ALWAYS (DO NOT DO THOSE)
+- Statistical Decision Theory: Other S/W Engineering Applications
+
+
+## EC - 12 ICSM Stages and Phases
 - ICSM Stages and Phases 概述(p2)
   - 2 Stages(system definition, incremental development) and 5 Phases(exploration, valuation, foundation, development, production and operation phases)
 - **exploration, valuation, foundation**三个phase的input，activities和outputs, 以及entry&exit criteria (p8, 9, 10)
@@ -359,7 +306,7 @@
 - Legacy re-engineering (p40)
 
 
-## EC - 17 ICSM Patterns and Common Cases
+## EC - 13 ICSM Patterns and Common Cases
 - ICSM Process Decision Table 以及 inputs & outputs（p5&p6）
 - ICSM Special Cases (p8-22)
    1.use NDI  2. Pure Agile methods 3.architected agile 4. formal methods
@@ -371,7 +318,7 @@
   - environment risks, agility risks, plan-driven risks      
 
 
-## EC - 18 Balancing Agility and Discipline Evaluating & Integrating Agile and Plan-Driven Methods
+## EC - 14 Balancing Agility and Discipline Evaluating & Integrating Agile and Plan-Driven Methods
 - plan-driven methods,  agile methods (p4)
 -  two approaches to software development: disciplined and agile (p6)
 - 介绍agile method（具体方法XP）和 plan-driven(TSP),，以及对比(p7-32)
@@ -380,20 +327,7 @@
 - XP + situational common sense >= lightweight method (p55, 56)
 - home ground (p62)
 
-
-## EC - 20 Software Estimation: Tools and Techniques
-- purpose of estimation(p6)
-- estimation VS plans(p7)
-- good estimation (p9& p10)
-- accuracy of estimates(p16) - 有图
-- estimation techniques(p26-43)
-  - 1.Fermi decomposition    2. individual expert judgement 3. decomposition & recomposition
-  - 4.estimation by analogy  5. proxy-based estimates 6. experts judgements in group
-  - 7.estimation by tools(costar, seer)
-
-
-
-## EC- 22 Balancing System and Software Qualities
+## EC- 15 Managing System and Software Qualities
 - Critical nature of system qualities(SQs)
   - importance of SQ Tradeoffs (p3)
   - Types of Decision Reviews (p4)
@@ -464,6 +398,16 @@
   - Robotics: Implementing Asimov’s Laws (p25)
   - Perversion of Objectives: Examples (p26)
 - **Conclusion** (p27)
+
+## GC-1 Software Estimation: Tools and Techniques
+- purpose of estimation(p6)
+- estimation VS plans(p7)
+- good estimation (p9& p10)
+- accuracy of estimates(p16) - 有图
+- estimation techniques(p26-43)
+  - 1.Fermi decomposition    2. individual expert judgement 3. decomposition & recomposition
+  - 4.estimation by analogy  5. proxy-based estimates 6. experts judgements in group
+  - 7.estimation by tools(costar, seer)
 
 
 
