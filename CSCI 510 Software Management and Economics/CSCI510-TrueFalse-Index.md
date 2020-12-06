@@ -450,7 +450,7 @@
 - Achieving Agility and High Assurance (p44 ~46)
 
 
-## EC - 24 Software Engineering Ethics and Future Responsibilities
+## EC -17 Software Engineering Ethics and Future Responsibilities
 - Definition and Context of “Ethics”  - by Webster (p3~ 4)
   - Power to do public harm or good (p5 ~ 10)
   - ACM/IEE Software Engineering Code of Ethics- Table of Contents(p11)
