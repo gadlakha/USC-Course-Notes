@@ -392,11 +392,6 @@
   - 7.estimation by tools(costar, seer)
 
 
-## EC - 21 Systems Engineering for Highly Rapid Development - Parallel Agile Process
-- B2B, NoSQL DB, Rest APIs (p9& p11)
-- balancing agility and discipline targets the cost minimum (P14)
-- everything goes faster when work in parallel (p18)
-
 
 ## EC- 22 Balancing System and Software Qualities
 - Critical nature of system qualities(SQs)
@@ -468,38 +463,6 @@
   - Robotics: Implementing Asimov’s Laws (p25)
   - Perversion of Objectives: Examples (p26)
 - **Conclusion** (p27)
-
-
-## EC - 26 The Internet of Things
-- 5 Learning Objectives (p3)
-- Definition of IoT (p9)
-- IoT Core Technologies & IoT Technology Chain: Rossman’s Perspective (p10 ~ 11)
-- Five Cloud Services Models (p15)
-- Multi-tiered Anatomy of Cloud Architectures for IoT (p16 ~ 17)
-- Fog Topologies:
-  - Three Sample Fog Topologies (p18)
-  - Multiple Fog Nodes with Multiple Cloud Providers (p19)
-  - Multi-Tier Fog Topology (p20)
-- Non-IP Based Wireless Personal Area Networks(WPAN) vs. IP-Based WPAN and WLAN vs. Long-Range Communication System and Protocols (p21 ~ 24)
-- Analytics: Four V’s of Big Data (p26)
-  - Gartner’s Perspective (p27)
-  - Added Value (p28)
-  - Basic Data Analytics in IoT (p29)
-- Driving Forces for IoT Growth (p30 ~ p33)
-  - Demonstration of Metcalfe’s LAW (p34)
-  - Tree of Potential IoT Impact (p35)
-- **Use Cases (p36 ~p45)**
-- Case Study(p46 ~
-  - Problem & Challenge (p47 ~ 48)
-  - Development Approach (p 49)
-  - Prototyping Plan (p50)
-  - Critical Review (p51)
-- Demo #1 -AT&T IoT Starter Kit vs. Demo #2 (p52 ~54)
-- Thoughts On IoT Security 
-  - IoT Security Consideration (p56 ~60)
-  
-
-
 
 
 
