@@ -435,7 +435,7 @@
   
 
 
-## EC - 23  Educating T-Shaped Computer Science Students
+## EC - 16  Educating T-Shaped Computer Science Students
 - T-Shaped vs. I-Shaped person (p3)
 - Factoring contributing to I-Shaped software engineer problems (p4)
 - Example problems created by I-Shaped software engineers (p5)
@@ -446,6 +446,7 @@
 - ICSM Model Integration: Valuation Phase (p17)
 - The Incremental Commitment Spiral Model(ICSM) (p23 - 27)
 - **WinWin Negotiation Model (p30 ~32)**
+- COTS: Not "all about programming" (p32)
 - Valued-Based Review Methods (p39 ~41)
 - Achieving Agility and High Assurance (p44 ~46)
 
